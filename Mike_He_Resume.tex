@@ -1,0 +1,178 @@
+\documentclass{resume}
+\usepackage{hyperref}
+
+\usepackage[left=0.60in,top=0.3in,right=0.60in,bottom=0.3in]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\titlespacing*{\rSection}{0pt}{1.1\baselineskip}{\baselineskip}
+% \name{Mike He}
+% \address{1135 NE CAMPUS PKWY \\ Seattle, WA 98105}
+% \address{(206)~$\cdot$~887~$\cdot$~8588 \\ dh63@cs.washington.edu}
+% \address{https://ad1024.space}
+
+\begin{document}
+\MakeUppercase{\Large{\textbf{Mike He}}} \hfill {\em{dh63@cs.washington.edu}}
+\vspace{-5pt}
+
+https://ad1024.space \hfill{\em (206)~$\cdot$~887~$\cdot$~8588}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+
+	\begin{rSection}{Education}
+
+	{\bf University of Washington, Seattle} \hfill {\em Sept. 2018 - Est. Sept. 2022} \\
+	\textit{B.S. in Computer Science} \\
+	Overall GPA: 3.95
+	\vspace{-5pt}
+	\begin{itemize}[leftmargin=*]
+		\setlength{\itemsep}{1pt}
+		\setlength{\parskip}{0pt}
+		\setlength{\parsep}{0pt}
+		\item Interests of Studies: Programming Languages - Type Theory \& Formal Verification. Japanese Studies.
+	\end{itemize}
+	% {$\Rightarrow$ \bf Activities:}
+	% \begin{itemize}
+	% 	\setlength{\itemsep}{1pt}
+	% 	\setlength{\parskip}{0pt}
+	% 	\setlength{\parsep}{0pt}
+	% 	\item Participated \textit{UW Solar Data} research project in 2019
+	% 	\item Joined in \textit{Code Spree} RSO holding competitive programming lectures and contests
+	% \end{itemize}
+	% \\
+	% {\bf Beijing National Day School} \hfill {\em Sept. 2012 - Jul. 2018} \\ 
+	% Member of Informatics Computing Contest Class \\
+	% Backend Dev \& President of HCC Computing Community \\
+	% {$\Rightarrow$ \bf Activities:}
+	% \begin{itemize}
+	% 	\setlength{\itemsep}{1pt}
+	% 	\setlength{\parskip}{0pt}
+	% 	\setlength{\parsep}{0pt}
+	% 	\item Participated in many competitive programming contests such as Codeforces, NOIp(National Olympiad in Informatics), CCC(Canada Computing Contest);
+	% 	\item Completed \textbf{Programming Languages} (CSE 341) course on Coursera.
+	% \end{itemize}
+
+	% {$\Rightarrow$ \bf Additional Courses Taken:}
+	% \begin{itemize}
+	% 	\setlength{\itemsep}{1pt}
+	% 	\setlength{\parskip}{0pt}
+	% 	\setlength{\parsep}{0pt}
+	% 	\item[-] \textbf{Programming Languages} (Coursera, CSE 341)
+	% 	\item[-] \textbf{Advanced Data Structure} using lectures from MIT 6.851
+	% 	\item[-] \textbf{Functional Programming} using Haskell and Standard ML
+	% \end{itemize}
+	\end{rSection}
+	\vspace{-5pt}
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE
+%----------------------------------------------------------------------------------------
+
+	\begin{rSection}{Experience}
+
+		% \begin{rSubsection}{Xiaomi, Inc}{Mar. 2014 - Mar. 2015}{Test Engineer Intern}{Remote}
+		% 	\item Tested new features and reported system vulnerabilities and log analysis to other teams. Facilitated System Development Team identified and fixed 50+ critical issues ranging from memory corruption to bad UI interaction during system upgrades from V4.0 to V7.0; Participated alpha tests of MIUI 6.0 and MIUI 7.0 and provided optimization plans.
+		% \end{rSubsection}
+
+	%------------------------------------------------
+
+		\begin{rSubsection}{HCC Computing Community}{Feb. 2015 - Mar. 2018}{President \& Lecturer \& Web Developer}{Bejing, China}
+			\item Developed \& maintained a website named Shiyiquan for Beijing National Day School to manage student organizations using Django as its backend. Designed courses and lectures for high school students to learn Python, Android development and functional programming and held classes for students interested in computer programming.
+		\end{rSubsection}
+		\vspace{-5pt}
+	%------------------------------------------------
+		\begin{rSubsection}{UW Solar Data Research}{Jan. 2019 - Now}{Undergraduate Participant}{Seattle, WA}
+			\item Developed online panel for visualizing data collected from solar panels deployed around UW campus; Deployed the system to the lab, tested for its stability and optimized the web-based panel.
+		\end{rSubsection}
+
+	\end{rSection}
+	\vspace{-5pt}
+	% \newpage
+	%----------------------------------------------------------------------------------------
+	%	PROJECTS
+	%----------------------------------------------------------------------------------------
+
+	\begin{rSection}{Projects}
+		\textbf{BNDS Online Judge} \hfill {\em {\href{https://github.com/AD1024/BNDSOJ}{On Github}}}
+		\vspace{-5pt}
+
+		An online judge designed for Beijing National Day School, developed based on \href{https://github.com/vfleaking/uoj}{Universal Online Judge (UOJ)}. It is optimized for CS course instructors to assign, review and grade homework for students. Implementations are contributed to UOJ open source community. Currently, it is being used as the official testing website at BNDS.
+		\vspace{-5pt}
+
+		\textbf{Realm.js}
+		\vspace{-5pt}
+
+		A functional reactive programming library designed for frontend developers. Written in TypeScript, the library combines the design of Elm and Rxjs. It combines a functional / imperative / reactive hybrid paradigm of frontend programming. It is the final project of CSE 402 (Domain-Specific Language).
+		\vspace{-5pt}
+
+		\textbf{Lotus Leaf} \hfill {\em {\href{https://github.com/AD1024/lotus-leaf-frontend}{On Github}}}
+		\vspace{-5pt}
+
+		A frontend of a data panel for visualizing and monitoring data sets collected from solar metrics deployed arround University of Washington campus; The system is deployed at the Clear Energy Institute at University Village. This is a research project of ECE Department instructed by Professor Kirschen.
+
+		% \begin{rSubsection}{BNDS Online Judge}{\href{https://github.com/AD1024/BNDSOJ}{https://github.com/AD1024/BNDSOJ}}{}
+		% 	\item An online judge developed based on \href{https://github.com/vfleaking/uoj}{Universal Online Judge}. It is modified and designed for CS course instructors to assign, review and grade homework.
+		% 	% \item Built for Beijing National Day School based on \href{https://github.com/vfleaking/uoj}{Universal Online Judge}(UOJ), the OJ is being used as the official competitive programming training website as well as educational-use website for Python programming course.
+		% 	% \item It has more practical functionalities designed for course instructors to assign, review and grade homework.
+		% 	% \item Implementations added to BNDSOJ are partially contributed to the UOJ community edition in order to make a user-friendly version of Universal Online Judge.
+		% \end{rSubsection}
+		% \vspace{-5pt}
+		% \begin{rSubsection}{Realm.js}{}{}
+		% 	\item A functional reactive programming library designed for frontend developers. Written in TypeScript, the library combines the design of Elm and Rxjs. It combines a functional / imperative / reactive hybrid paradigm of frontend programming.
+		% \end{rSubsection}
+		% \vspace{-5pt}
+		% \begin{rSubsection}{Lotus Leaf}{\href{https://github.com/AD1024/lotus-leaf-frontend}{https://github.com/AD1024/lotus-leaf-frontend}}{}
+		% 	\item A frontend of a data panel for visualizing and monitoring data sets collected from solar metrics deployed arround University of Washington Campus; The system is deployed at the Clear Energy Institute at University Village.
+		% \end{rSubsection}
+
+		% \begin{rSubsection}{Blog}{\href{https://github.com/BNDS-Programmers/Blog}{https://github.com/BNDS-Programmers/Blog}}{Full-stack Web Developer}
+		% 	\indent A generic Blog system that is easy to be deployed and maintained.
+		% 	\begin{itemize}
+		% 		\setlength{\itemsep}{1pt}
+		% 		\setlength{\parskip}{0pt}
+		% 		\setlength{\parsep}{0pt}
+		% 		\item RTF and Markdown support;
+		% 		\item Embedded with KaTeX, fast math formula render engine;
+		% 		\item Code highlight for mainstream languages;
+		% 		\item Customize personal information page;
+		% 		\item User-friendly article management functions.
+		% 	\end{itemize}
+		% \end{rSubsection}
+
+	\end{rSection}
+	\vspace{-5pt}
+	% \begin{rSection}{Technical Strengths}
+	% 	\begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
+	% 		Languages & Python3, C, Java, Javascript, PHP, Coq, Haskell \\
+	% 		Backend Frameworks & Node.js, Django \\
+	% 		Databases & MySQL, PostgreSQL \\
+	% 		Directions of Study & Programming Languages \& Formal Verification \\
+	% 	\end{tabular}
+	% \end{rSection}
+	\begin{rSection}{Spec}
+		\begin{tabular}{ @{} >{\bfseries}l @{\hspace{4ex}} l }
+			Languages & Agda, Haskell, TypeScript, Python3, Java \\
+			Skills    & Dependent-Type Theory, Functional Programming, Algorithm Design \\
+			What's more    & Violin (Performing Level certified by Central Conservatory Of Music)
+		\end{tabular}
+	\end{rSection}
+	%----------------------------------------------------------------------------------------
+	%	HONORS
+	%----------------------------------------------------------------------------------------
+
+	\begin{rSection}{Honors}
+		\begin{itemize}
+			\setlength{\itemsep}{1pt}
+			\setlength{\parskip}{0pt}
+			\setlength{\parsep}{0pt}
+			\item \textbf{Outstanding Developer Team}, Xiaomi Inc. \hfill {\em Mar. 2015}
+			\item \textbf{Second Prize}, National Olympiad in Informatics (Beijing Regional) \hfill {\em Dec. 2016}
+			\item \textbf{Global Rank 33 (out of 400+)}, High School CTF 4 \hfill {\em May. 2017}
+			\item \textbf{First Prize}, Software Engineering Contest for High School Students (Beijing) \hfill {\em Jul. 2017}
+			\item \textbf{Second Prize}, National Software Development Contest for High School Students \hfill {\em Jul. 2017}
+			\item \textbf{Global Rank 16 (out of 300+)}, High School CTF 5 \hfill {\em May. 2018}
+			\item \textbf{Annual Dean's List}, University of Washington \hfill {\em 2018 - 2019}
+			\item \textbf{JASSO Scholarship}, Waseda University \hfill {\em Jun. 2019}
+		\end{itemize}
+	\end{rSection}
+\end{document}
