@@ -1,7 +1,7 @@
 \documentclass{resume}
 \usepackage{hyperref}
 
-\usepackage[left=0.60in,top=0.1in,right=0.60in,bottom=0.3in]{geometry}
+\usepackage[left=0.60in,top=0.3in,right=0.60in,bottom=0.3in]{geometry}
 \usepackage{titlesec}
 \usepackage{enumitem}
 \titlespacing*{\rSection}{0pt}{1.1\baselineskip}{\baselineskip}
@@ -12,23 +12,34 @@
 
 \begin{document}
 	\MakeUppercase{\Large{\textbf{Mike He}}} \hfill {\em{\href{mailto:dh63@cs.washington.edu}{dh63@cs.washington.edu}}}\\
-	\vspace{-5pt}\href{https://ad1024.space}{https://ad1024.space} \hfill{\em (206)~$\cdot$~887~$\cdot$~8588}\\
+	\vspace{-5pt}\href{https://ad1024.space}{https://ad1024.space} \hfill{\em (206)~$\cdot$~887~$\cdot$~8588}
 
 %----------------------------------------------------------------------------------------
 %	EDUCATION
 %----------------------------------------------------------------------------------------
 
 	\begin{rSection}{Education}
-	{\bf University of Washington, Seattle} \hfill {\em Sept. 2018--Est. Jun. 2022} \\
-	\textit{B.S. in Computer Science} \\
-	Overall GPA: 3.95
+	{\bf University of Washington, Seattle} \hfill {\em Sept. 2018---Est. Jun. 2022} \\
+	\textit{B.S. in Computer Science}
 	\vspace{-5pt}
         \begin{itemize}[leftmargin=*]
             \setlength{\itemsep}{1pt}
             \setlength{\parskip}{0pt}
-            \setlength{\parsep}{0pt}
+			\setlength{\parsep}{0pt}
+			\item Cumulative GPA: 3.95
             \item Interests of Studies: Programming Languages - Type Theory \& Formal Verification. Japanese Studies.
-        \end{itemize}
+		\end{itemize}
+		\vspace{-5pt}
+		\textbf{Selected Courses:}
+		\vspace{-5pt}
+		\begin{itemize}
+			\setlength{\itemsep}{1pt}
+            \setlength{\parskip}{0pt}
+			\setlength{\parsep}{0pt}
+			\item \textbf{CSE 351} Hardware / Software Interface
+            \item \textbf{CSE 402} Introduction to Domain-Specific Langauge
+            \item \textbf{CSE 507} Computer-Aided Reasoning for Software
+		\end{itemize}
 	\end{rSection}
 	\vspace{-5pt}
 
@@ -38,7 +49,7 @@
 
 	\begin{rSection}{Spec}
 		\begin{tabular}{ @{} >{\bfseries}l @{\hspace{4ex}} l }
-			Languages & Agda, Haskell, TypeScript, Python3, Java, HTML, \LaTeX \\
+			Languages & Python3, Java, Agda, Haskell, HTML, \LaTeX \\
 			Skills    & Programming Languages, Functional Programming, Algorithm Design \\
 			What's more?    & Violin (Performing Level certified by Central Conservatory Of Music)
 		\end{tabular}
@@ -56,7 +67,7 @@
 
 	%------------------------------------------------
 
-		\begin{rSubsection}{Relay}{Oct. 2019--Now}{Research Assistant}{Seattle, WA}
+		\begin{rSubsection}{Relay}{Oct. 2019---Now}{Research Assistant}{Seattle, WA}
 			\item A High-Level Intermidiate Representation for \href{https://tvm.ai/}{tvm stack}.
 			\item Being responsible for the evaluation infrastructure and performing efficiency analysis for the compiler.
 		\end{rSubsection}
@@ -64,17 +75,17 @@
 
 	%-------------------------------------------------
 
-		\begin{rSubsection}{UW Solar Data Research}{Jan. 2019--Sept. 2019}{Undergraduate Participant}{Seattle, WA}
+		\begin{rSubsection}{UW Solar Data Research}{Jan. 2019---Sept. 2019}{Undergraduate Researcher}{Seattle, WA}
 			\item Developed online panel for visualizing data collected from solar panels deployed around UW campus; Deployed the system to the CEI Testbeds, tested for its stability and optimized its performance.
 		\end{rSubsection}
 		\vspace{-5pt}
 
 	%------------------------------------------------
 
-		\begin{rSubsection}{HCC Computing Community}{Feb. 2015--Mar. 2018}{President \& Lecturer \& Web Developer}{Bejing, China}
-			\item Developed \& maintained a website named Shiyiquan for Beijing National Day School to manage student organizations. Designed courses and lectures for high school students to learn Python, Android development and functional programming and held classes for students interested in computer programming.
-		\end{rSubsection}
-		\vspace{-5pt}
+		% \begin{rSubsection}{HCC Computing Community}{Feb. 2015--Mar. 2018}{President \& Lecturer \& Web Developer}{Bejing, China}
+		% 	\item Developed \& maintained a website named Shiyiquan for Beijing National Day School to manage student organizations. Designed courses and lectures for high school students to learn Python, Android development and functional programming and held classes for students interested in computer programming.
+		% \end{rSubsection}
+		% \vspace{-5pt}
 	\end{rSection}
 	\vspace{-5pt}
 	% \newpage
@@ -96,19 +107,28 @@
 		%------------------------------
         %          Realm.js
         %------------------------------
-		% \textbf{Realm.js}
-		% \vspace{-5pt}
+		\textbf{Realm.js}
+		\vspace{-5pt}
 
-		% A functional reactive programming library designed for frontend developers. Written in TypeScript, the library combines the design of Elm and RxJs. It adopts a functional imperative and reactive hybrid paradigm of frontend programming. It is the final project of CSE 402 (Domain-Specific Language).
-		% \vspace{-5pt}
+		A functional reactive programming library designed for frontend developers. Written in TypeScript, the library combines the design of Elm and RxJs. It adopts a functional imperative and reactive hybrid paradigm of frontend programming. It is the final project of CSE 402 (Domain-Specific Language).
+		\vspace{-5pt}
+
+		%------------------------------
+		%            Blog
+		%------------------------------
+		\textbf{Blog} \hfill {\em {\href{https://github.com/BNDS-Programmers/Blog}{On Github}}}
+		\vspace{-5pt}
+
+		A general-purpose blog system built by using Koa2 that supports both RTF and Markdown; renders mathematical expressions using KaTeX; supports code highlight with hightlight.js; has multi-user management functionality; provides customization supports for about page. 
+		\vspace{-5pt}
 
         %------------------------------
         %         Lotus Leaf
         %------------------------------
-		\textbf{Lotus Leaf} \hfill {\em {\href{https://github.com/AD1024/lotus-leaf-frontend}{On Github}}}
-		\vspace{-5pt}
+		% \textbf{Lotus Leaf} \hfill {\em {\href{https://github.com/AD1024/lotus-leaf-frontend}{On Github}}}
+		% \vspace{-5pt}
 
-		A frontend of a data panel for visualizing and monitoring data sets collected from solar metrics deployed arround University of Washington campus; The system is deployed at the Clear Energy Institute at University Village. This is a research project of ECE Department instructed by Professor Kirschen.
+		% A frontend of a data panel for visualizing and monitoring data sets collected from solar metrics deployed arround University of Washington campus; The system is deployed at the Clear Energy Institute at University Village. This is a research project of ECE Department instructed by Professor Kirschen.
 
 	\end{rSection}
 	\vspace{-5pt}
@@ -123,13 +143,13 @@
 			\setlength{\parskip}{0pt}
 			\setlength{\parsep}{0pt}
 			\item \textbf{JASSO Scholarship}, Waseda University \hfill {\em Jun. 2019}
-			\item \textbf{Annual Dean's List}, University of Washington \hfill {\em 2018-2019}
-			\item \textbf{Global Rank 16 (out of 300+)}, High School CTF 5 \hfill {\em May. 2018}
+			\item \textbf{Annual Dean's List}, University of Washington \hfill {\em 2018---2019}
+			% \item \textbf{Global Rank 16 (out of 300+)}, High School CTF 5 \hfill {\em May. 2018}
 			% \item \textbf{Second Prize}, National Software Development Contest for High School Students \hfill {\em Jul. 2017}
 			\item \textbf{First Prize}, Software Engineering Contest for High School Students (Beijing) \hfill {\em Apr. 2017}
 			% \item \textbf{Global Rank 33 (out of 400+)}, High School CTF 4 \hfill {\em May. 2017}
 			\item \textbf{Second Prize}, National Olympiad in Informatics (Beijing Regional) \hfill {\em Dec. 2016}
-			\item \textbf{Outstanding Developer Team}, Xiaomi Inc. \hfill {\em Mar. 2015}
+			% \item \textbf{Outstanding Developer Team}, Xiaomi Inc. \hfill {\em Mar. 2015}
 		\end{itemize}
 	\end{rSection}
 \end{document}
