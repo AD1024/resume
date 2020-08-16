@@ -27,7 +27,7 @@
             \setlength{\parskip}{0pt}
 			\setlength{\parsep}{0pt}
 			\item Cumulative GPA: 3.89
-            \item Interests of Studies: Programming Languages \& Formal Verification
+            \item Interests of Studies: Programming Languages \& Formal Verification \& Compilers
 		\end{itemize}
 		\vspace{-5pt}
 		\textbf{Selected Courses:}
@@ -39,8 +39,8 @@
 			\item \textbf{CSE 332} Data Structures \& Parallelism
             \item \textbf{CSE 402} Domain-Specific Langauges
             \item \textbf{CSE 490} Programming Languages \& Program Verification
-            \item \textbf{CSE 507} Computer-Aided Reasoning for Software
             \item \textbf{CSE 505} Principle of Programming Languages
+            \item \textbf{CSE 507} Computer-Aided Reasoning for Software
 		\end{itemize}
 	\end{rSection}
 	\vspace{-5pt}
@@ -51,9 +51,9 @@
 
 	\begin{rSection}{Skills}
 		\begin{tabular}{ @{} >{\bfseries}l @{\hspace{4ex}} l }
-			Languages & Python, Java, Haskell, Agda, OCaml, \LaTeX \\
+			Languages & Python, Java, Rust, Haskell, Agda, OCaml, \LaTeX \\
 			Skills    & Certified Programming, Functional Programming, Automated Verification \\
-			What's more?    & I've been playing the violin for 16 years. \\ &I like Symphonies composed by \href{https://imslp.org/wiki/Category:Mahler,_Gustav}{Gustav Mahler}.
+			Others    & I've been playing the violin for 16 years. \\ &I like Symphonies composed by \href{https://imslp.org/wiki/Category:Mahler,_Gustav}{Gustav Mahler}.
 		\end{tabular}
 	\end{rSection}
 
@@ -70,7 +70,7 @@
 	%------------------------------------------------ 
 
 		\begin{rSubsection}{PLSE}{Oct. 2019---Now}{Research Assistant}{Seattle, WA} 
-			\item Working on Project Marlowe, synthesizing compilers for domain-specific hardwares. (Summer RA).
+			\item Working on 3LA Marlowe, aiming to find verified and automated compilation from Deep Learning models (Relay) to accelerators (e.g. FlexNLP). (Summer RA).
 			\item Worked on tvm/relay, a High-Level Intermidiate Representation for \href{https://tvm.ai/}{tvm}.
 			\item Worked on Dynamic Tensor Rematerialization, an online greedy gradient checkpointing algorithm.
 		\end{rSubsection}
@@ -122,16 +122,24 @@
 		\textbf{Sager} \hfill {\em {\href{https://github.com/AD1024/Sager}{On Github}}}
 		\vspace{-5pt}
 
-		A Demonic Graph Synthesizer (data structure synthesizer) that aims for worst-case performance of graph-related algorithms (e.g. SSSP). It uses \href{https://github.com/emina/rosette}{\textsc{Rosette}} as the solver for synthesizing the core structure and calls a scaler for generating larger graphs. It is the final project of CSE 507 (Computer-Aided Reasoning for Software).
+		A Demonic Graph Synthesizer (data structure synthesizer) using \href{https://github.com/emina/rosette}{\textsc{Rosette}} that aims for worst-case performance of graph-related algorithms (e.g. SSSP).
 		% \vspace{-5pt}
 
 		%------------------------------
-		%      torch checkpointing
+		%      veripy
 		%------------------------------
 		\textbf{veripy} \hfill {\em {\href{https://github.com/AD1024/veripy}{On Github}}}
 		\vspace{-5pt}
 
-		An auto-active verification library for Python3 base on verification condition generation of Hoare Logic.
+		An auto-active program verification library for Python3 base on verification condition of Hoare Logic.
+
+		%------------------------------
+		%      dtlc
+		%------------------------------
+		\textbf{dtlc} \hfill {\em {\href{https://github.com/AD1024/dtlc}{On Github}}}
+		\vspace{-5pt}
+
+		An implementation of a proof assistant based on Dependently-typed Lambda Calculus.
 
 		%------------------------------
 		%            Blog
