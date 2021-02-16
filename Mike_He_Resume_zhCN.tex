@@ -1,0 +1,215 @@
+\documentclass{resume}
+\usepackage{hyperref}
+\usepackage{CJKutf8}
+\AtBeginDvi{\input{zhwinfonts}}
+\usepackage[left=0.60in,top=0.3in,right=0.60in,bottom=0.3in]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xeCJK}
+\titlespacing*{\rSection}{0pt}{1.1\baselineskip}{\baselineskip}
+% \name{Mike He}
+% \address{1135 NE CAMPUS PKWY \\ Seattle, WA 98105}
+% \address{(206)~$\cdot$~887~$\cdot$~8588 \\ dh63@cs.washington.edu}
+% \address{https://ad1024.space}
+
+\begin{document}
+\begin{CJK*}{UTF8}{gbsn}
+	\MakeUppercase{\Large{\textbf{何\ 德源}}} \hfill {\em{\href{mailto:dh63@cs.washington.edu}{dh63@cs.washington.edu}}}\\
+	\vspace{-5pt}\href{https://ad1024.space}{https://ad1024.space} \hfill{\em (206)~$\cdot$~887~$\cdot$~8588}
+
+
+%----------------------------------------------------------------------------------------
+%	Specifications
+%----------------------------------------------------------------------------------------
+
+	\begin{rSection}{专业技能}
+		\begin{tabular}{ @{} >{\bfseries}l @{\hspace{4ex}} l }
+			常用编程语言 & C/C++, Python, Java, Rust, OCaml, Haskell, Coq, Agda, \LaTeX \\
+			技能    & 函数式编程; 自动化程序验证; 面向对象编程; 基础图形学; 机器学习系统 \\
+			其他    & 我练习小提琴十七年，我喜欢\href{https://imslp.org/wiki/Category:Mahler,_Gustav}{马勒}所创作的交响乐。
+		\end{tabular}
+	\end{rSection}
+	\vspace{-5pt}
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+
+	\begin{rSection}{Education}
+	{\bf 华盛顿大学西雅图} \hfill {\em 2018年9月---预计\ 2022年6月} \\
+	\textit{计算机科学B.S.学位}
+	\vspace{-5pt}
+        \begin{itemize}[leftmargin=*]
+            \setlength{\itemsep}{1pt}
+            \setlength{\parskip}{0pt}
+			\setlength{\parsep}{0pt}
+			\item 累计绩点: 3.88
+            \item 研究学习方向: 程序语言 \& 形式验证 \& 编译器 \& 机器学习系统
+		\end{itemize}
+		% \vspace{-5pt}
+		% \textbf{Selected Courses:}
+		% \vspace{-5pt}
+		% \begin{itemize}
+		% 	\setlength{\itemsep}{1pt}
+        %     \setlength{\parskip}{0pt}
+		% 	\setlength{\parsep}{0pt}
+		% 	\item \textbf{CSE 332} Data Structures \& Parallelism
+        %     \item \textbf{CSE 505} Principle of Programming Languages
+        %     \item \textbf{CSE 507} Computer-Aided Reasoning for Software
+		% \end{itemize}
+	\end{rSection}
+	\vspace{-5pt}
+
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE
+%----------------------------------------------------------------------------------------
+
+	\begin{rSection}{工作经验}
+
+		% \begin{rSubsection}{Troph}{Dec. 2019---Now}{Backend Developer Intern}{Remote}
+		% 	\item Being responsible for developing server Backend and populate REST API for the Troph IRC website.
+		% \end{rSubsection}
+
+	%------------------------------------------------ 
+
+		\begin{rSubsection}{PLSE\ \&\ SAMPL Research Group, 华盛顿大学}{2019年10月至今}{研究助理}{西雅图, 华盛顿} 
+			\item 参与了3LA项目的开发，致力于设计\textbf{自动化}且\textbf{被验证的}面向深度学习加速器的编译器
+			\item 为\href{https://tvm.ai}{TVM}的IR Relay的测试系统添加了新feature (如Profiler，Wall clock, etc.)解决编译器效率问题。
+			\item 参与了Dynamic Tensor Rematerialization; 该项目提出了新的基于策略搜索的贪心算法。该算法能够根据GPU显存使用情况动态地释放或重新计算张量，使得显存受限的设备也能够训练较大的深度学习模型。
+		\end{rSubsection}
+		\vspace{-5pt}
+
+	%-------------------------------------------------
+
+		\begin{rSubsection}{计算机与电子工程系, 华盛顿大学}{2019年1月---2019年9月}{研究助理}{西雅图, 华盛顿}
+			\item 开发并部署了监控华盛顿大学周边太阳能电池板使用情况的可视化终端。该项目部署于\href{https://www.cei.washington.edu/}{Clean Energy Institute}.
+		\end{rSubsection}
+		\vspace{-5pt}
+
+	%------------------------------------------------
+
+		% \begin{rSubsection}{HCC Computing Community}{Feb. 2015--Mar. 2018}{President \& Lecturer \& Web Developer}{Bejing, China}
+		% 	\item Developed \& maintained a website named Shiyiquan for Beijing National Day School to manage student organizations. Designed courses and lectures for high school students to learn Python, Android development and functional programming and held classes for students interested in computer programming.
+		% \end{rSubsection}
+		% \vspace{-5pt}
+	\end{rSection}
+	\vspace{-5pt}
+	% \newpage
+	%----------------------------------------------------------------------------------------
+	%	PROJECTS
+	%----------------------------------------------------------------------------------------
+
+	\begin{rSection}{个人项目}
+	
+        %------------------------------
+        %           BNDSOJ
+        %------------------------------
+		% \textbf{BNDS Online Judge} \hfill {\em {\href{https://github.com/AD1024/BNDSOJ}{On Github}}}
+		% \vspace{-5pt}
+
+		% An online judge designed for Beijing National Day School, developed based on \href{https://github.com/vfleaking/uoj}{Universal Online Judge (UOJ)}. It is optimized for CS course instructors to assign, review and grade homework for students. Implementations are contributed to UOJ open source community. Currently, it is being used as the official testing website at BNDS.
+		% \vspace{-5pt}
+
+		%------------------------------
+        %          Realm.js
+        %------------------------------
+		% \textbf{Realm.js}
+		% \vspace{-5pt}
+
+		% A functional reactive programming library designed for frontend developers. Written in TypeScript, the library combines the design of Elm and RxJs. It adopts a functional imperative and reactive hybrid paradigm of frontend programming. It is the final project of CSE 402 (Domain-Specific Language).
+		% \vspace{-5pt}
+
+		%------------------------------
+		%            Sager
+		%------------------------------
+		\textbf{Sager} % \hfill {\em {\href{https://github.com/AD1024/Sager}{On GitHub}}}
+		\vspace{-5pt}
+		% \begin{itemize}
+		% 	\setlength{\itemsep}{1pt}
+        %     \setlength{\parskip}{0pt}
+		% 	\setlength{\parsep}{0pt}
+		% \end{itemize}
+		\begin{itemize}
+			\setlength{\itemsep}{1pt}
+            \setlength{\parskip}{0pt}
+			\setlength{\parsep}{0pt}
+			\item 根据操作数据结构的算法实现生成对应数据结构使得算法在该数据结构上达到其最坏复杂度。
+			\item \textbf{语言} \& \textsc{工具}: \textbf{Racket}, \textbf{Rosette}, \textsc{Z3}
+			\item 关键词: SMT Solver, Incremental Solving, 程序生成, 符号运行
+		\end{itemize}
+		\vspace{-5pt}
+
+		%------------------------------
+		%      veripy
+		%------------------------------
+		\textbf{veripy} % \hfill {\em {\href{https://github.com/AD1024/veripy}{On GitHub}}}
+		\vspace{-5pt}
+
+		\begin{itemize}
+			\setlength{\itemsep}{1pt}
+            \setlength{\parskip}{0pt}
+			\setlength{\parsep}{0pt}
+			\item 面向Python的自动化程序验证。给出对于程序的输入/输出的限制，自动化验证程序是否正确实现。
+			\item \textbf{语言} \& \textsc{工具}: \textbf{Python 3}, \textbf{SMT-LIB}, \textsc{Z3}, \textsc{pyparsing}
+			\item 关键词: SMT Solver, 静态分析, 霍尔逻辑, 程序验证
+		\end{itemize}
+
+		%------------------------------
+		%      dtlc
+		%------------------------------
+		\textbf{dtlc} % \hfill {\em {\href{https://github.com/AD1024/dtlc}{On GitHub}}}
+		\vspace{-5pt}
+
+		\begin{itemize}
+			\setlength{\itemsep}{1pt}
+            \setlength{\parskip}{0pt}
+			\setlength{\parsep}{0pt}
+			\item 依赖类型Lambda演算的实现 - 辅助定理证明
+			\item \textbf{语言} \& \textsc{工具}: \textbf{OCaml}, \textsc{Menhir}, \textsc{Dune}
+			\item 关键词: 类型论 - 依赖类型, 辅助定理证明, 函数式编程
+		\end{itemize}
+
+		%------------------------------
+		%            Blog
+		%------------------------------
+		% \textbf{Blog} \hfill {\em {\href{https://github.com/BNDS-Programmers/Blog}{On Github}}}
+		% \vspace{-5pt}
+
+		% A general-purpose blog system built by using Koa2 that supports both RTF and Markdown; renders mathematical expressions using KaTeX; supports code highlight with hightlight.js; has multi-user management functionality; provides customization supports for about page. 
+
+        %------------------------------
+        %         Lotus Leaf
+        %------------------------------
+		% \textbf{Lotus Leaf} \hfill {\em {\href{https://github.com/AD1024/lotus-leaf-frontend}{On Github}}}
+		% \vspace{-5pt}
+
+		% A frontend of a data panel for visualizing and monitoring data sets collected from solar metrics deployed arround University of Washington campus; The system is deployed at the Clear Energy Institute at University Village. This is a research project of ECE Department instructed by Professor Kirschen.
+
+	\end{rSection}
+	\vspace{-5pt}
+
+	\begin{rSection}{文献}
+		Kirisame, M., Lyubomirsky, S., Haan, A., Brennan, J., \textbf{He, M.}, Roesch, J., Chen, T., Tatlock, Z. \textit{Dynamic Tensor Rematerialization}. ICLR 2021 (Spotlight). September 19, 2020. \href{https://arxiv.org/abs/2006.09616}{https://arxiv.org/abs/2006.09616}
+	\end{rSection}
+	
+	%----------------------------------------------------------------------------------------
+	%	HONORS
+	%----------------------------------------------------------------------------------------
+
+	\begin{rSection}{奖项}
+		\begin{itemize}
+			\setlength{\itemsep}{1pt}
+			\setlength{\parskip}{0pt}
+			\setlength{\parsep}{0pt}
+			\item \textbf{Lynn Conway Research Award (DTR Team)}, \href{https://adacenter.org}{ADA} \hfill {\em 2020}
+			% \item \textbf{JASSO Scholarship}, Waseda University \hfill {\em Jun. 2019}
+			\item \textbf{Annual Dean's List}, 华盛顿大学 \hfill {\em 2018---2020}
+			% \item \textbf{Global Rank 16 (out of 300+)}, High School CTF 5 \hfill {\em May. 2018}
+			% \item \textbf{Second Prize}, National Software Development Contest for High School Students \hfill {\em Jul. 2017}
+			% \item \textbf{First Prize}, Software Engineering Hackathon for High School Students (Beijing) \hfill {\em Apr. 2017}
+			% \item \textbf{Global Rank 33 (out of 400+)}, High School CTF 4 \hfill {\em May. 2017}
+			\item \textbf{二等奖}, 信息学竞赛 (北京市) \hfill {\em 2016年12月}
+			% \item \textbf{Outstanding Developer Team}, Xiaomi Inc. \hfill {\em Mar. 2015}
+		\end{itemize}
+	\end{rSection}
+	\clearpage\end{CJK*}
+\end{document}
