@@ -19,14 +19,14 @@
 %	Specifications
 %----------------------------------------------------------------------------------------
 
-	\begin{rSection}{Skills}
-		\begin{tabular}{ @{} >{\bfseries}l @{\hspace{4ex}} l }
-			Languages & C/C++, Python, Java, Rust, OCaml, Haskell, Coq, Agda, \LaTeX \\
-			Skills    & Certified \& Functional Programming, Automated Verification \\
-			Others    & I've been playing the violin for 17 years. I like Symphonies composed by \href{https://imslp.org/wiki/Category:Mahler,_Gustav}{Gustav Mahler}.
-		\end{tabular}
-	\end{rSection}
-	\vspace{-5pt}
+	% \begin{rSection}{Skills}
+	% 	\begin{tabular}{ @{} >{\bfseries}l @{\hspace{4ex}} l }
+	% 		Languages & C/C++, Python, Java, Rust, OCaml, Haskell, Coq, Agda, \LaTeX \\
+	% 		Skills    & Certified \& Functional Programming, Automated Verification \\
+	% 		Others    & I've been playing the violin for 17 years. I like Symphonies composed by \href{https://imslp.org/wiki/Category:Mahler,_Gustav}{Gustav Mahler}.
+	% 	\end{tabular}
+	% \end{rSection}
+	% \vspace{-5pt}
 %----------------------------------------------------------------------------------------
 %	EDUCATION
 %----------------------------------------------------------------------------------------
@@ -39,8 +39,10 @@
             \setlength{\itemsep}{1pt}
             \setlength{\parskip}{0pt}
 			\setlength{\parsep}{0pt}
-			\item Cumulative GPA: 3.89
+			\item Cumulative GPA: 3.88 / 4
             \item Field of Studies: Programming Languages \& Formal Verification \& Compilers \& MLSys
+            \item Selected Coursework: Data Structures \& Parallelism; Intro to Algorithms; Advanced Programming Languages \& Verification; Intro to Artificial Intelligence; System Programming; Computational Complexity
+			\item PLs \& Skills: \textbf{Java}, \textbf{Python}, \textbf{C++}, \textbf{Coq}, \textbf{OCaml}, \textbf{Rust}; Algorithm Design, Formal Verification
 		\end{itemize}
 		% \vspace{-5pt}
 		% \textbf{Selected Courses:}
@@ -69,17 +71,26 @@
 	%------------------------------------------------ 
 
 		\begin{rSubsection}{PLSE\ \&\ SAMPL Research Group, University of Washington}{Oct. 2019---Now}{Research Assistant}{Seattle, WA} 
-			\item Working on building an \textbf{automated} and \textbf{verified compiler} for Deep Learning acclelerators
-			\item Added new features such as Experiment \textbf{Profiler} in the evaluation infrastructure for Relay in \href{https://tvm.ai}{TVM} addressing performance bottleneck
-			\item Worked on Dynamic Tensor Rematerialization, an online greedy gradient checkpointing algorithm that \textbf{enables} training Deep Learning models \textbf{on memory-constrained devices}.
+			% \item Working on building an automated and verified compiler for Deep Learning acclelerators by integrating \textbf{ILA Codegen} (Instruction-level Abstraction) to \textbf{TVM} with Bring Your Own Codegen (BYOC).
+			\item Implemented a Just-in-time compiler (\textbf{JIT}) in \textbf{TVM} that can offload deep learning operators, perform simulation-based verification during compile time and addresses granularity mismatches between high-level intermediate representations and target accelerators by compiling to Instruction-level Abstraction (\textbf{ILA}).
+			% \item Worked with \textbf{TVM} and proposed bug fixes in \textbf{model quantization} and \textbf{AoT Compiler}.
+			% \item Implemented experiment profiler to investigate \textbf{compilation overhead} and solved performance discrepancy by pinning workload on single core complex (CCX).
+			\item Worked on Dynamic Tensor Rematerialization (\textbf{DTR}), an greedy gradient checkpointing algorithm that \textbf{enables} training Deep Learning models on memory-constrained devices (e.g. GPUs, FPGA-based accelerators) by evicting and recomputing tensors \textbf{on fly} without prior knowledge about the model architecture. \item Implemented continuous integration and evaluation for the DTR implementation in \textbf{PyTorch}; the infrastructure was able to detect multiple performance regression and expose bugs in operator dispatcher.
 		\end{rSubsection}
-		\vspace{-5pt}
+		% \vspace{-5pt}
+
+		\begin{rSubsection}{University of Washington}{Mar. 2021---Jun. 2021}{Teaching Assistant}{Seattle, WA}
+			\item Worked as TA for \textbf{Principle of Programming Languages} (CSE 505)
+			\item Helped re-designing CSE 505 and developing course materials for various topics about PL and formal verification (\textbf{Hoare Logic}, \textbf{Lambda Calculus} and \textbf{System F}, etc.) in \textbf{Coq}.
+			\item Held office hours and shared tricks used in Coq tactics and Coq programming.
+			\item Coordinate grading of all homework assignments.
+		\end{rSubsection}
 
 	%-------------------------------------------------
 
-		\begin{rSubsection}{ECE, University of Washington}{Jan. 2019---Sept. 2019}{Research Assistant}{Seattle, WA}
-			\item Developed an online panel for visualizing data collected from solar panels deployed around UW campus.
-		\end{rSubsection}
+		% \begin{rSubsection}{ECE, University of Washington}{Jan. 2019---Sept. 2019}{Research Assistant}{Seattle, WA}
+		% 	\item Developed an online panel for visualizing data collected from solar panels deployed around UW campus.
+		% \end{rSubsection}
 		\vspace{-5pt}
 
 	%------------------------------------------------
@@ -118,22 +129,18 @@
 		%------------------------------
 		%            Sager
 		%------------------------------
-		\textbf{\href{https://github.com/AD1024/Sager}{Sager}} % \hfill {\em {\href{https://github.com/AD1024/Sager}{On GitHub}}}
-		\vspace{-5pt}
+		% \textbf{\href{https://github.com/AD1024/Sager}{Sager}} % \hfill {\em {\href{https://github.com/AD1024/Sager}{On GitHub}}}
+		% \vspace{-5pt}
 		% \begin{itemize}
 		% 	\setlength{\itemsep}{1pt}
         %     \setlength{\parskip}{0pt}
 		% 	\setlength{\parsep}{0pt}
+		% 	\item A demonic data structure synthesizer written in \textsc{rosette}, a \textbf{solver-aided} language based on \textbf{Racket}. \textbf{Sager} is able to exploit algorithm bottleneck by performing \textbf{symbolic exeuction} over the whole algorithm and using \textbf{SMT solver} to synthesize a sample data structure the algorithm works on that pushes the algorithm to its worst-case performance.
+			% \item A demonic data structure synthesizer that aims to explore worst-cases performance of graph algorithms.
+			% \item \textbf{Language} \& \textsc{Tools}: \textbf{Racket}, \textbf{Rosette}, \textsc{Z3}
+			% \item Keywords: SMT Solver, Incremental Solving, Program Synthesis, Symbolic Execution
 		% \end{itemize}
-		\begin{itemize}
-			\setlength{\itemsep}{1pt}
-            \setlength{\parskip}{0pt}
-			\setlength{\parsep}{0pt}
-			\item A demonic data structure synthesizer that aims to explore worst-cases performance of graph algorithms.
-			\item \textbf{Language} \& \textsc{Tools}: \textbf{Racket}, \textbf{Rosette}, \textsc{Z3}
-			\item Keywords: SMT Solver, Incremental Solving, Program Synthesis, Symbolic Execution
-		\end{itemize}
-		\vspace{-5pt}
+		% \vspace{-5pt}
 
 		%------------------------------
 		%      veripy
@@ -145,9 +152,10 @@
 			\setlength{\itemsep}{1pt}
             \setlength{\parskip}{0pt}
 			\setlength{\parsep}{0pt}
-			\item An auto-active program verification library for Python 3 that can verify implementations against specifications of programs.
-			\item \textbf{Language} \& \textsc{Tools}: \textbf{Python 3}, \textbf{SMT-LIB}, \textsc{Z3}, \textsc{pyparsing}
-			\item Keywords: SMT Solver, Static Analysis, Hoare Logic, Program Verification
+			\item An easy-to-use auto-active program verification library for Python programs written in \textbf{Python}.
+			\item The library is shallowly embedded in Python and the interface is implemented as \textbf{decorators}. It compiles annotated Python functions to \textbf{SMT} formulae and calls \textbf{SMT solver} to check whether it matches the given specification and gives a counter-example input when it violates any constraint.
+			% \item \textbf{Language} \& \textsc{Tools}: \textbf{Python 3}, \textbf{SMT-LIB}, \textsc{Z3}, \textsc{pyparsing}
+			% \item Keywords: SMT Solver, Static Analysis, Hoare Logic, Program Verification
 		\end{itemize}
 
 		%------------------------------
@@ -160,9 +168,11 @@
 			\setlength{\itemsep}{1pt}
             \setlength{\parskip}{0pt}
 			\setlength{\parsep}{0pt}
-			\item An implementation of dependently-typed lambda calculus that can be used as a Proof Assistant 
-			\item \textbf{Language} \& \textsc{Tools}: \textbf{OCaml}, \textsc{Menhir}, \textsc{Dune}
-			\item Keywords: Type Theory - Dependent Type, Proof Assistant, Functional Programming
+			\item Implemented \textbf{dependently-typed} lambda calculus in Martin-Löf style intuitionistic type theory.
+			\item Written in \textbf{OCaml}, \textbf{dtlc} has a language frontend \textbf{Lexer \& Parser} implemented using \textbf{Menhir}. Core language supports \textbf{type unification} with \textbf{metavariables} which makes the type inference stronger.
+			\item Implemented eliminators for \textbf{naturals}, \textbf{identity type}, \textbf{union type}, etc.
+			% \item \textbf{Language} \& \textsc{Tools}: \textbf{OCaml}, \textsc{Menhir}, \textsc{Dune}
+			% \item Keywords: Type Theory - Dependent Type, Proof Assistant, Functional Programming
 		\end{itemize}
 
 		%------------------------------
@@ -201,12 +211,12 @@
 			\setlength{\parsep}{0pt}
 			\item \textbf{Lynn Conway Research Award (DTR Team)}, \href{https://adacenter.org}{ADA} \hfill {\em 2020}
 			% \item \textbf{JASSO Scholarship}, Waseda University \hfill {\em Jun. 2019}
-			\item \textbf{Annual Dean's List}, University of Washington \hfill {\em 2018---2020}
+			\item \textbf{Annual Dean's List}, University of Washington \hfill {\em 2018---2021}
 			% \item \textbf{Global Rank 16 (out of 300+)}, High School CTF 5 \hfill {\em May. 2018}
 			% \item \textbf{Second Prize}, National Software Development Contest for High School Students \hfill {\em Jul. 2017}
 			% \item \textbf{First Prize}, Software Engineering Hackathon for High School Students (Beijing) \hfill {\em Apr. 2017}
 			% \item \textbf{Global Rank 33 (out of 400+)}, High School CTF 4 \hfill {\em May. 2017}
-			\item \textbf{Second Prize}, National Olympiad in Informatics (Beijing Regional) \hfill {\em Dec. 2016}
+			% \item \textbf{Second Prize}, National Olympiad in Informatics (Beijing Regional) \hfill {\em Dec. 2016}
 			% \item \textbf{Outstanding Developer Team}, Xiaomi Inc. \hfill {\em Mar. 2015}
 		\end{itemize}
 	\end{rSection}

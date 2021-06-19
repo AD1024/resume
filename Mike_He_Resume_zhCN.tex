@@ -1,11 +1,9 @@
 \documentclass{resume}
 \usepackage{hyperref}
-\usepackage{CJKutf8}
-\AtBeginDvi{\input{zhwinfonts}}
+\usepackage[UTF8]{ctex}
 \usepackage[left=0.60in,top=0.3in,right=0.60in,bottom=0.3in]{geometry}
 \usepackage{titlesec}
 \usepackage{enumitem}
-\usepackage{xeCJK}
 \titlespacing*{\rSection}{0pt}{1.1\baselineskip}{\baselineskip}
 % \name{Mike He}
 % \address{1135 NE CAMPUS PKWY \\ Seattle, WA 98105}
@@ -13,8 +11,7 @@
 % \address{https://ad1024.space}
 
 \begin{document}
-\begin{CJK*}{UTF8}{gbsn}
-	\MakeUppercase{\Large{\textbf{何\ 德源}}} \hfill {\em{\href{mailto:dh63@cs.washington.edu}{dh63@cs.washington.edu}}}\\
+	\MakeUppercase{\Large{\textbf{何德源}}} \hfill {\em{\href{mailto:dh63@cs.washington.edu}{dh63@cs.washington.edu}}}\\
 	\vspace{-5pt}\href{https://ad1024.space}{https://ad1024.space} \hfill{\em (206)~$\cdot$~887~$\cdot$~8588}
 
 
@@ -22,28 +19,30 @@
 %	Specifications
 %----------------------------------------------------------------------------------------
 
-	\begin{rSection}{专业技能}
-		\begin{tabular}{ @{} >{\bfseries}l @{\hspace{4ex}} l }
-			常用编程语言 & C/C++, Python, Java, Rust, OCaml, Haskell, Coq, Agda, \LaTeX \\
-			技能    & 函数式编程; 自动化程序验证; 面向对象编程; 基础图形学; 机器学习系统 \\
-			其他    & 我练习小提琴十七年，我喜欢\href{https://imslp.org/wiki/Category:Mahler,_Gustav}{马勒}所创作的交响乐。
-		\end{tabular}
-	\end{rSection}
-	\vspace{-5pt}
+	% \begin{rSection}{Skills}
+	% 	\begin{tabular}{ @{} >{\bfseries}l @{\hspace{4ex}} l }
+	% 		Languages & C/C++, Python, Java, Rust, OCaml, Haskell, Coq, Agda, \LaTeX \\
+	% 		Skills    & Certified \& Functional Programming, Automated Verification \\
+	% 		Others    & I've been playing the violin for 17 years. I like Symphonies composed by \href{https://imslp.org/wiki/Category:Mahler,_Gustav}{Gustav Mahler}.
+	% 	\end{tabular}
+	% \end{rSection}
+	% \vspace{-5pt}
 %----------------------------------------------------------------------------------------
 %	EDUCATION
 %----------------------------------------------------------------------------------------
 
-	\begin{rSection}{Education}
-	{\bf 华盛顿大学西雅图} \hfill {\em 2018年9月---预计\ 2022年6月} \\
-	\textit{计算机科学B.S.学位}
+	\begin{rSection}{教育经历}
+	{\bf 华盛顿大学西雅图} \hfill {\em 2018年9月---预计2022年6月} \\
+	\textit{本科计算机科学专业}
 	\vspace{-5pt}
         \begin{itemize}[leftmargin=*]
             \setlength{\itemsep}{1pt}
             \setlength{\parskip}{0pt}
 			\setlength{\parsep}{0pt}
-			\item 累计绩点: 3.89
-            \item 研究学习方向: 程序语言 \& 形式验证 \& 编译器 \& 机器学习系统
+			\item 绩点: 3.88 / 4
+            \item 研究领域: 计算机语言 \& 形式验证 \& 编译器 \& 机器学习系统
+            \item 课程: 数据结构与并行编程; 算法导论; 计算机语言与形式验证; 人工智能导论; 系统编程; 计算复杂性理论
+			\item 常用语言 \& 技能: \textbf{Java}, \textbf{Python}, \textbf{C++}, \textbf{Coq}, \textbf{OCaml}, \textbf{Rust}; 算法设计, 形式化验证, 依赖类型
 		\end{itemize}
 		% \vspace{-5pt}
 		% \textbf{Selected Courses:}
@@ -63,7 +62,7 @@
 %	WORK EXPERIENCE
 %----------------------------------------------------------------------------------------
 
-	\begin{rSection}{工作经验}
+	\begin{rSection}{工作经历}
 
 		% \begin{rSubsection}{Troph}{Dec. 2019---Now}{Backend Developer Intern}{Remote}
 		% 	\item Being responsible for developing server Backend and populate REST API for the Troph IRC website.
@@ -71,18 +70,33 @@
 
 	%------------------------------------------------ 
 
-		\begin{rSubsection}{PLSE\ \&\ SAMPL Research Group, 华盛顿大学}{2019年10月至今}{研究助理}{西雅图, 华盛顿} 
-			\item 参与了3LA项目的开发，致力于设计\textbf{自动化}且\textbf{被验证的}面向深度学习加速器的编译器
-			\item 为\href{https://tvm.ai}{TVM}的IR Relay的测试系统添加了新feature (如Profiler，Wall clock, etc.)解决编译器效率问题。
-			\item 参与了Dynamic Tensor Rematerialization; 该项目提出了新的基于策略搜索的贪心算法。该算法能够根据GPU显存使用情况动态地释放或重新计算张量，使得显存受限的设备也能够训练较大的深度学习模型。
+		\begin{rSubsection}{程序语言与软件工程实验室, 华盛顿大学}{2019年10月至今}{研究助理}{西雅图, 华盛顿} 
+			% \item Working on building an automated and verified compiler for Deep Learning acclelerators by integrating \textbf{ILA Codegen} (Instruction-level Abstraction) to \textbf{TVM} with Bring Your Own Codegen (BYOC).
+			% \item Implemented a Just-in-time compiler (\textbf{JIT}) in \textbf{TVM} that can offload deep learning operators, perform simulation-based verification during compile time and addresses granularity mismatches between high-level intermediate representations and target accelerators by compiling to Instruction-level Abstraction (\textbf{ILA}).
+			\item 在\textbf{TVM}框架中实现了支持编译深度学习算子至自定义加速器同时进行基于SystemC模拟并进行正确性验证的Just-in-time (\textbf{JIT}) 编译器。该编译器将指令抽象(\textbf{ILA}) 作为IR解决了模型算子粒度与加速器不一致的问题。
+			% \item Worked with \textbf{TVM} and proposed bug fixes in \textbf{model quantization} and \textbf{AoT Compiler}.
+			% \item Implemented experiment profiler to investigate \textbf{compilation overhead} and solved performance discrepancy by pinning workload on single core complex (CCX).
+			% \item Worked on Dynamic Tensor Rematerialization (\textbf{DTR}), an greedy gradient checkpointing algorithm that \textbf{enables} training Deep Learning models on memory-constrained devices (e.g. GPUs, FPGA-based accelerators) by evicting and recomputing tensors \textbf{on fly} without prior knowledge about the model architecture.
+			\item 参与动态张量重构 (\textbf{DTR}) 项目。DTR是一个不需要任何模型架构相关信息即可在训练时\textbf{动态}地释放 / 重构张量的启发式贪心算法。DTR可用于将较大的模型部署在内存较小的设备上 (如基于FPGA的深度学习加速器)。
+			% \item Implemented continuous integration and evaluation for the DTR implementation in \textbf{PyTorch}; the infrastructure was able to detect multiple performance regression and expose bugs in operator dispatcher.
+			\item 实现了DTR CI与相关测试infrastructure并在项目研发期间检测出算子分发器与算法中的漏洞。
 		\end{rSubsection}
-		\vspace{-5pt}
+		% \vspace{-5pt}
+
+		\begin{rSubsection}{华盛顿大学计算机学院}{2021年3月---2021年6月}{助教}{西雅图, 华盛顿}
+			% \item Worked as TA for \textbf{Principle of Programming Languages} (CSE 505)
+			\item 服务于\textbf{程序语言理论} (CSE 505) 课程
+			% \item Helped re-designing CSE 505 and developing course materials for various topics about PL and formal verification (\textbf{Hoare Logic}, \textbf{Lambda Calculus} and \textbf{System F}, etc.) in \textbf{Coq}.
+			\item 帮助重新设计了CSE 505课程内容与课程材料开发。内容包括形式化\textbf{霍尔逻辑}，\textbf{Lambda演算}，\textbf{System F}等。
+			\item 主持周常Office Hour，帮助学生解决作业问题，分享Coq编程技巧
+			\item 协助处理作业打分
+		\end{rSubsection}
 
 	%-------------------------------------------------
 
-		\begin{rSubsection}{计算机与电子工程系, 华盛顿大学}{2019年1月---2019年9月}{研究助理}{西雅图, 华盛顿}
-			\item 开发并部署了监控华盛顿大学周边太阳能电池板使用情况的可视化终端。该项目部署于\href{https://www.cei.washington.edu/}{Clean Energy Institute}.
-		\end{rSubsection}
+		% \begin{rSubsection}{ECE, University of Washington}{Jan. 2019---Sept. 2019}{Research Assistant}{Seattle, WA}
+		% 	\item Developed an online panel for visualizing data collected from solar panels deployed around UW campus.
+		% \end{rSubsection}
 		\vspace{-5pt}
 
 	%------------------------------------------------
@@ -121,22 +135,18 @@
 		%------------------------------
 		%            Sager
 		%------------------------------
-		\textbf{\href{https://github.com/AD1024/Sager}{Sager}} % \hfill {\em {\href{https://github.com/AD1024/Sager}{On GitHub}}}
-		\vspace{-5pt}
+		% \textbf{\href{https://github.com/AD1024/Sager}{Sager}} % \hfill {\em {\href{https://github.com/AD1024/Sager}{On GitHub}}}
+		% \vspace{-5pt}
 		% \begin{itemize}
 		% 	\setlength{\itemsep}{1pt}
         %     \setlength{\parskip}{0pt}
 		% 	\setlength{\parsep}{0pt}
+		% 	\item A demonic data structure synthesizer written in \textsc{rosette}, a \textbf{solver-aided} language based on \textbf{Racket}. \textbf{Sager} is able to exploit algorithm bottleneck by performing \textbf{symbolic exeuction} over the whole algorithm and using \textbf{SMT solver} to synthesize a sample data structure the algorithm works on that pushes the algorithm to its worst-case performance.
+			% \item A demonic data structure synthesizer that aims to explore worst-cases performance of graph algorithms.
+			% \item \textbf{Language} \& \textsc{Tools}: \textbf{Racket}, \textbf{Rosette}, \textsc{Z3}
+			% \item Keywords: SMT Solver, Incremental Solving, Program Synthesis, Symbolic Execution
 		% \end{itemize}
-		\begin{itemize}
-			\setlength{\itemsep}{1pt}
-            \setlength{\parskip}{0pt}
-			\setlength{\parsep}{0pt}
-			\item 根据操作数据结构的算法实现生成对应数据结构使得算法在该数据结构上达到其最坏复杂度。
-			\item \textbf{语言} \& \textsc{工具}: \textbf{Racket}, \textbf{Rosette}, \textsc{Z3}
-			\item 关键词: SMT Solver, Incremental Solving, 程序生成, 符号运行
-		\end{itemize}
-		\vspace{-5pt}
+		% \vspace{-5pt}
 
 		%------------------------------
 		%      veripy
@@ -148,9 +158,11 @@
 			\setlength{\itemsep}{1pt}
             \setlength{\parskip}{0pt}
 			\setlength{\parsep}{0pt}
-			\item 面向Python的自动化程序验证。给出对于程序的输入/输出的限制，自动化验证程序是否正确实现。
-			\item \textbf{语言} \& \textsc{工具}: \textbf{Python 3}, \textbf{SMT-LIB}, \textsc{Z3}, \textsc{pyparsing}
-			\item 关键词: SMT Solver, 静态分析, 霍尔逻辑, 程序验证
+			\item 使用\textbf{Python}语言编写易于使用的Python自动交互式程序验证库.
+			% \item The library is shallowly embedded in Python and the interface is implemented as \textbf{decorators}. It compiles annotated Python functions to \textbf{SMT} formulae and calls \textbf{SMT solver} to check whether it matches the given specification and gives a counter-example input when it violates any constraint.
+			\item 该验证库核心为嵌入Python语言的DSL。接口实现为\textbf{装饰器}。验证时将被标注的Python函数编译至\textbf{SMT}公式并将其发送至\textbf{SMT Solver} (Z3)验证该函数是否符合输入 / 输出要求。验证不通过时将给出输入反例。
+			% \item \textbf{Language} \& \textsc{Tools}: \textbf{Python 3}, \textbf{SMT-LIB}, \textsc{Z3}, \textsc{pyparsing}
+			% \item Keywords: SMT Solver, Static Analysis, Hoare Logic, Program Verification
 		\end{itemize}
 
 		%------------------------------
@@ -163,9 +175,12 @@
 			\setlength{\itemsep}{1pt}
             \setlength{\parskip}{0pt}
 			\setlength{\parsep}{0pt}
-			\item 依赖类型Lambda演算的实现 - 辅助定理证明
-			\item \textbf{语言} \& \textsc{工具}: \textbf{OCaml}, \textsc{Menhir}, \textsc{Dune}
-			\item 关键词: 类型论 - 依赖类型, 辅助定理证明, 函数式编程
+			\item 实现了基于Martin-Löf直觉主义类型论的\textbf{依赖类型} Lambda演算 .
+			% \item Written in \textbf{OCaml}, \textbf{dtlc} has a language frontend \textbf{Lexer \& Parser} implemented using \textbf{Menhir}. Core language supports \textbf{type unification} with \textbf{metavariables} which makes the type inference stronger.
+			\item \textbf{dtlc}编写语言为\textbf{OCaml}，内置使用\textbf{Menhir}实现的语言前端 (词法分析器与解析器)。核心语言支持带有\textbf{元变量}的类型一致化强化了类型推导能力。
+			\item 实现了\textbf{自然数类型}, \textbf{单位类型}, \textbf{和类型}等类型的eliminator.
+			% \item \textbf{Language} \& \textsc{Tools}: \textbf{OCaml}, \textsc{Menhir}, \textsc{Dune}
+			% \item Keywords: Type Theory - Dependent Type, Proof Assistant, Functional Programming
 		\end{itemize}
 
 		%------------------------------
@@ -188,28 +203,29 @@
 	\vspace{-5pt}
 
 	\begin{rSection}{文献}
-		Kirisame, M., Lyubomirsky, S., Haan, A., Brennan, J., \textbf{He, M.}, Roesch, J., Chen, T., Tatlock, Z. \textit{Dynamic Tensor Rematerialization}. ICLR 2021 (Spotlight). September 19, 2020. \href{https://arxiv.org/abs/2006.09616}{https://arxiv.org/abs/2006.09616}
+		\begin{itemize}
+			\item Kirisame, M., Lyubomirsky, S., Haan, A., Brennan, J., \textbf{He, M.}, Roesch, J., Chen, T., Tatlock, Z. \textit{Dynamic Tensor Rematerialization}. ICLR 2021 (Spotlight). September 19, 2020.\\ \href{https://arxiv.org/abs/2006.09616}{https://arxiv.org/abs/2006.09616}
+		\end{itemize}
 	\end{rSection}
 	
 	%----------------------------------------------------------------------------------------
 	%	HONORS
 	%----------------------------------------------------------------------------------------
 
-	\begin{rSection}{奖项}
-		\begin{itemize}
-			\setlength{\itemsep}{1pt}
-			\setlength{\parskip}{0pt}
-			\setlength{\parsep}{0pt}
-			\item \textbf{Lynn Conway Research Award (DTR Team)}, \href{https://adacenter.org}{ADA} \hfill {\em 2020}
-			% \item \textbf{JASSO Scholarship}, Waseda University \hfill {\em Jun. 2019}
-			\item \textbf{Annual Dean's List}, 华盛顿大学 \hfill {\em 2018---2020}
-			% \item \textbf{Global Rank 16 (out of 300+)}, High School CTF 5 \hfill {\em May. 2018}
-			% \item \textbf{Second Prize}, National Software Development Contest for High School Students \hfill {\em Jul. 2017}
-			% \item \textbf{First Prize}, Software Engineering Hackathon for High School Students (Beijing) \hfill {\em Apr. 2017}
-			% \item \textbf{Global Rank 33 (out of 400+)}, High School CTF 4 \hfill {\em May. 2017}
-			\item \textbf{二等奖}, 信息学竞赛 (北京市) \hfill {\em 2016年12月}
-			% \item \textbf{Outstanding Developer Team}, Xiaomi Inc. \hfill {\em Mar. 2015}
-		\end{itemize}
-	\end{rSection}
-	\clearpage\end{CJK*}
+	% \begin{rSection}{Honors}
+	% 	\begin{itemize}
+	% 		\setlength{\itemsep}{1pt}
+	% 		\setlength{\parskip}{0pt}
+	% 		\setlength{\parsep}{0pt}
+	% 		\item \textbf{Lynn Conway Research Award (DTR Team)}, \href{https://adacenter.org}{ADA} \hfill {\em 2020}
+	% 		% \item \textbf{JASSO Scholarship}, Waseda University \hfill {\em Jun. 2019}
+	% 		\item \textbf{Annual Dean's List}, University of Washington \hfill {\em 2018---2020}
+	% 		% \item \textbf{Global Rank 16 (out of 300+)}, High School CTF 5 \hfill {\em May. 2018}
+	% 		% \item \textbf{Second Prize}, National Software Development Contest for High School Students \hfill {\em Jul. 2017}
+	% 		% \item \textbf{First Prize}, Software Engineering Hackathon for High School Students (Beijing) \hfill {\em Apr. 2017}
+	% 		% \item \textbf{Global Rank 33 (out of 400+)}, High School CTF 4 \hfill {\em May. 2017}
+	% 		% \item \textbf{Second Prize}, National Olympiad in Informatics (Beijing Regional) \hfill {\em Dec. 2016}
+	% 		% \item \textbf{Outstanding Developer Team}, Xiaomi Inc. \hfill {\em Mar. 2015}
+	% 	\end{itemize}
+	% \end{rSection}
 \end{document}
