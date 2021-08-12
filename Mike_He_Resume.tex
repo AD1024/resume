@@ -1,9 +1,10 @@
 \documentclass{resume}
 \usepackage{hyperref}
 
-\usepackage[left=0.60in,top=0.3in,right=0.60in,bottom=0.3in]{geometry}
+\usepackage[left=0.40in,top=-0.5in,right=0.40in,bottom=0.3in]{geometry}
 \usepackage{titlesec}
 \usepackage{enumitem}
+\usepackage{natbib, bibentry}
 \titlespacing*{\rSection}{0pt}{1.1\baselineskip}{\baselineskip}
 % \name{Mike He}
 % \address{1135 NE CAMPUS PKWY \\ Seattle, WA 98105}
@@ -11,6 +12,8 @@
 % \address{https://ad1024.space}
 
 \begin{document}
+\bibliographystyle{unsrt}
+\nobibliography{publication.bib}
 	\MakeUppercase{\Large{\textbf{Mike He}}} \hfill {\em{\href{mailto:dh63@cs.washington.edu}{dh63@cs.washington.edu}}}\\
 	\vspace{-5pt}\href{https://ad1024.space}{https://ad1024.space} \hfill{\em (206)~$\cdot$~887~$\cdot$~8588}
 
@@ -72,7 +75,7 @@
 
 		\begin{rSubsection}{PLSE\ \&\ SAMPL Research Group, University of Washington}{Oct. 2019---Now}{Research Assistant}{Seattle, WA} 
 			% \item Working on building an automated and verified compiler for Deep Learning acclelerators by integrating \textbf{ILA Codegen} (Instruction-level Abstraction) to \textbf{TVM} with Bring Your Own Codegen (BYOC).
-			\item Implemented a Just-in-time compiler (\textbf{JIT}) in \textbf{TVM} that can offload deep learning operators, perform simulation-based verification during compile time and addresses granularity mismatches between high-level intermediate representations and target accelerators by compiling to Instruction-level Abstraction (\textbf{ILA}).
+			\item Implemented a Just-in-time compiler (\textbf{JIT}) in \textbf{TVM} that can offload deep learning operators, perform simulation-based verification during compile time and address granularity mismatches between high-level intermediate representations and target accelerators by compiling to Instruction-level Abstraction (\textbf{ILA}).
 			% \item Worked with \textbf{TVM} and proposed bug fixes in \textbf{model quantization} and \textbf{AoT Compiler}.
 			% \item Implemented experiment profiler to investigate \textbf{compilation overhead} and solved performance discrepancy by pinning workload on single core complex (CCX).
 			\item Worked on Dynamic Tensor Rematerialization (\textbf{DTR}), an greedy gradient checkpointing algorithm that \textbf{enables} training Deep Learning models on memory-constrained devices (e.g. GPUs, FPGA-based accelerators) by evicting and recomputing tensors \textbf{on fly} without prior knowledge about the model architecture. \item Implemented continuous integration and evaluation for the DTR implementation in \textbf{PyTorch}; the infrastructure was able to detect multiple performance regression and expose bugs in operator dispatcher.
@@ -195,14 +198,19 @@
 	\vspace{-5pt}
 
 	\begin{rSection}{Publications}
-		\begin{itemize}
-			\item Kirisame, M., Lyubomirsky, S., Haan, A., Brennan, J., \textbf{He, M.}, Roesch, J., Chen, T., Tatlock, Z. \textit{Dynamic Tensor Rematerialization}. ICLR 2021 (Spotlight). September 19, 2020.\\ \href{https://arxiv.org/abs/2006.09616}{https://arxiv.org/abs/2006.09616}
-		\end{itemize}
+		\begin{enumerate}
+			\setlength{\itemsep}{1pt}
+            \setlength{\parskip}{0pt}
+			\setlength{\parsep}{0pt}
+			\item \bibentry{kirisame2021dynamic}
+			\item \bibentry{latte21}
+		\end{enumerate}
 	\end{rSection}
 	
 	%----------------------------------------------------------------------------------------
 	%	HONORS
 	%----------------------------------------------------------------------------------------
+	\vspace{-5pt}
 
 	\begin{rSection}{Honors}
 		\begin{itemize}

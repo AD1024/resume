@@ -77,7 +77,7 @@
 			% \item Worked with \textbf{TVM} and proposed bug fixes in \textbf{model quantization} and \textbf{AoT Compiler}.
 			% \item Implemented experiment profiler to investigate \textbf{compilation overhead} and solved performance discrepancy by pinning workload on single core complex (CCX).
 			% \item Worked on Dynamic Tensor Rematerialization (\textbf{DTR}), an greedy gradient checkpointing algorithm that \textbf{enables} training Deep Learning models on memory-constrained devices (e.g. GPUs, FPGA-based accelerators) by evicting and recomputing tensors \textbf{on fly} without prior knowledge about the model architecture.
-			\item 参与动态张量重构 (\textbf{DTR}) 项目。DTR是一个不需要任何模型架构相关信息即可在训练时\textbf{动态}地释放 / 重构张量的启发式贪心算法。DTR可用于将较大的模型部署在内存较小的设备上 (如基于FPGA的深度学习加速器)。
+			\item 参与Dynamic Tensor Rematerialization (\textbf{DTR}) 项目。DTR是一个不需要任何模型架构相关信息即可在训练时\textbf{动态}地释放 / 重构张量的启发式贪心算法。DTR可用于将较大的模型部署在内存较小的设备上 (如基于FPGA的深度学习加速器)。
 			% \item Implemented continuous integration and evaluation for the DTR implementation in \textbf{PyTorch}; the infrastructure was able to detect multiple performance regression and expose bugs in operator dispatcher.
 			\item 实现了DTR CI与相关测试infrastructure并在项目研发期间检测出算子分发器与算法中的漏洞。
 		\end{rSubsection}

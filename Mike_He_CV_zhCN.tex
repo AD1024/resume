@@ -1,0 +1,304 @@
+% LaTeX Curriculum Vitae
+% Author: Xovee Xu (https://xovee.cn)
+% Last Update: July 28, 2020
+% Latest Version: https://github.com/Xovee/latex-cv
+% Overleaf Link: https://www.overleaf.com/latex/templates/xovees-cv-template/rrsmqwhbygcf
+% Current Version: v0.95
+% LICENSE: MIT
+
+
+\documentclass{article}
+% \usepackage[left=0.60in,top=0.3in,right=0.60in,bottom=0.3in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[full]{textcomp}
+\usepackage[UTF8]{ctex}
+\usepackage[lf]{ebgaramond}
+% \usepackage[osf,scaled]{garamondx}
+
+\usepackage{enumitem}
+\usepackage[scale=.75]{geometry}
+\usepackage{url}
+\usepackage[dvipsnames]{xcolor}
+
+% package settings
+\usepackage[
+    hidelinks,
+    pdfnewwindow=true,
+    pdfauthor={Mike He},
+    pdftitle={Curriculum Vitae},
+]{hyperref}
+
+% \pagestyle{headings}
+% \markright{\textbf{Mike He}}
+
+\setlength\parindent{2em}
+
+\pagestyle{empty}
+
+\newcommand{\cvsubsection}[1]{\subsection*{\hspace{1.45em}#1}}
+\renewcommand{\refname}{论文}
+
+% begin
+\begin{document}
+
+\begin{center}
+    \vspace*{5pt}
+    \huge{
+    \textbf{何德源}}
+\end{center}
+\vspace{15pt}
+
+
+
+
+% Contact Information
+\setlength{\parskip}{1pt}
+
+\noindent 本科在读 \hfill \href{mailto:dh63@cs.washington.edu}{dh63@cs.washington.edu}
+
+\noindent 保罗艾伦计算机学院 \hfill \url{https://cs.washington.edu}
+
+\noindent 华盛顿大学西雅图 \hfill (+1) 206-887-8588
+
+\noindent 西雅图, 华盛顿, 美国
+
+\setlength{\parskip}{3pt}
+
+% language
+\section*{语言}
+中文 (普通话), 母语
+
+英文, 熟练 (TOEFL 109)
+
+日语, 流畅
+
+% Education
+\section*{教育经历}
+\textbf{华盛顿大学西雅图}, 美国华盛顿
+
+\begin{itemize}
+    \setlength{\itemsep}{1pt}
+    \setlength{\parskip}{0pt}
+    \setlength{\parsep}{0pt}
+    \item 本科B.S.计算机科学学士学位 (预计2022年4月毕业)
+    \item 研究方向: 程序语言; 编译器; 深度学习系统; 形式验证
+    \item 研修课程选: 算法导论; 数据结构; 计算复杂性理论; 程序语言原理; 数据中心系统; 计算机辅助推理 (程序生成); 计算机图形学; 计算机系统导论; 操作系统导论; 数理逻辑
+    \item GPA: 3.88
+\end{itemize}
+
+
+% below is another kind of style
+
+% Ph.D., Computer Science, University of Electronic Science and Technology of China, 2021 to 2025 (expc.)
+
+% M.S., Software Engineering, University of Electronic Science and Technology of China, 2021
+
+% B.S., Software Engineering, University of Electronic Science and Technology of China, 2018
+
+
+% academic employment
+% \section*{Academic Employment}
+% \indent
+
+% \textbf{Standard University}, CA, USA
+
+% \hspace{2em}Dean, Dept. of Computer Science, 2080 - 
+
+% \hspace{2em}Professor, 2077 - 
+
+% \hspace{2em}Associate Professor, 2066 - 2077
+
+% \hspace{2em}Assistant Professor, 2060 - 2066
+
+% \textbf{University of Electronic Science and Technology of China (UESTC)}, Chengdu, China
+
+% \hspace{2em}Research Assistant, 2018 - 
+
+
+% \section*{Academic Employment (Another Style)}
+% \indent
+
+% Dean, Dept. of Computer Science, Standard University, CA, USA, 2080 -
+
+% Professor, Standard University, CA, USA, 2077 -
+
+% Associated Professor, Standard University, CA, USA, 2066 - 2077
+
+% Assistant Professor, Standard University, CA, USA, 2060 - 2066
+
+% Research Assistant, University of Electronic Science and Technology of China, Chengdu, China, 2018 - 2025
+
+\section*{工作经历}
+
+\cvsubsection{程序语言与软件工程实验室}
+\vspace{-5pt}
+研究助理, 2019年10月至今
+
+\cvsubsection{保罗艾伦计算机学院}
+\vspace{-5pt}
+助教, 2021年3月--2021年6月
+
+\cvsubsection{电子与计算机工程系}
+\vspace{-5pt}
+研究助理, 2019年1月--2019年6月
+
+\section*{参与项目}
+\cvsubsection{DTR\hfill 2019年10月至今}
+\begin{itemize}
+    \setlength{\itemsep}{1pt}
+    \setlength{\parskip}{0pt}
+    \setlength{\parsep}{0pt}
+    \item 参与Dynamic Tensor Rematerialization (DTR) 项目并实现PyTorch原型程序的测试管线。DTR是一个不需要任何模型架构相关信息即可在训练模型过程中\textbf{动态}地释放 / 重构张量的启发式贪心算法。DTR可用于将较大的模型部署在内存较小的设备上 (如基于FPGA的深度学习加速器)。目前DTR已被旷视天元引擎实现并推广。
+\end{itemize}
+\cvsubsection{3LA\hfill 2020年6月至今}
+\begin{itemize}
+    \setlength{\itemsep}{1pt}
+    \setlength{\parskip}{0pt}
+    \setlength{\parsep}{0pt}
+    \item 3LA提出了可扩展且可验证的深度学习加速器编译框架的设计方法。将ILA (Instruction-level Abstraction)作为中间表示 (IR) 使得3LA编译框架能够解决深度学习算子粒度与目标加速器粒度不符的问题。
+    \item 参与并设计了VTA (Versatile Tensor Accelerator)的ILA编译器。
+    \item 目前正在着手于实现弹性模式匹配 (Flexible Matching)。弹性模式匹配利用E-Graph与Equality Saturation能够利用给定的重写规则(Rewrite Rules)找出一个模型的所有等价实现并在其中找出可以被目标深度学习加速器计算的部分。
+\end{itemize}
+
+\cvsubsection{CSE 505课程开发\hfill 2021年3月--2021年6月}
+\begin{itemize}
+    \setlength{\itemsep}{1pt}
+    \setlength{\parskip}{0pt}
+    \setlength{\parsep}{0pt}
+    \item 帮助设计了Lambda演算，霍尔逻辑，System F等课程内容对应的作业和讲义
+    \item 根据Frap Book (Formal Reasoning About Programs)重新设计课程内容
+\end{itemize}
+
+\cvsubsection{Lotus Leaf\hfill 2019年1月--2019年6月}
+\begin{itemize}
+    \setlength{\itemsep}{1pt}
+    \setlength{\parskip}{0pt}
+    \setlength{\parsep}{0pt}
+    \item 实现了监控校园周边太阳能电池板的网站。目前该项目部署于华盛顿大学清洁能源实验室。
+\end{itemize}
+
+\cvsubsection{十一圈\hfill 2016年1月--2018年3月}
+\begin{itemize}
+    \setlength{\itemsep}{1pt}
+    \setlength{\parskip}{0pt}
+    \setlength{\parsep}{0pt}
+    \item 十一圈是北京十一学校社团与社团活动管理网站
+    \item 开发了十一圈的Android客户端并在中学生软件设计比赛中获得北京市一等奖，全国二等奖
+    \item 实现了年度社团星级评价系统
+\end{itemize}
+
+
+\cvsubsection{BNDSOJ\hfill 2016年10月--2017年6月}
+\begin{itemize}
+    \setlength{\itemsep}{1pt}
+    \setlength{\parskip}{0pt}
+    \setlength{\parsep}{0pt}
+    \item 基于Universal Online Judge为北京十一学校信息学竞赛班开发了BNDSOJ
+    \item 部分开源代码已被收录于Universal Online Judge开源社区
+\end{itemize}
+
+% publication
+\nocite{*}
+\bibliographystyle{unsrt}
+\bibliography{publication}
+
+% academic service
+\section*{学术服务}
+
+MICRO'21 Artifact Evaluation Committee
+
+% \cvsubsection{General Chair}
+% \indent
+
+% International Conference on How to Write CV, 2077
+
+% \cvsubsection{Ad Hoc Reviewer}
+% \indent
+
+% IEEE Transactions on Knowledge and Data Engineering (TKDE)
+
+% IEEE/ACM Transaction on Network (TON)
+
+% \cvsubsection{Professional Membership}
+% \indent
+
+% Association for Computing Machinery (ACM)
+
+% \hspace{2em}Fellow (2080), Senior Member (2077), Member (2020)
+
+
+% talks
+% \section*{Invited Talk}
+% \indent 
+
+% University of CV, Dept. of Linguistics, 2077 
+
+
+
+% teaching experience 
+\section*{授课经历}
+CSE 505 程序语言原理, 助教, 2021年3月--2021年6月
+% \indent
+
+% \textbf{C Programming Language}\hfill Spring 2020
+
+% \hspace{2em}Teaching Assistant, with Prof. Ting Zhong, at UESTC
+
+% \textbf{Software Project Management}\hfill Summer 2019
+
+% \hspace{2em}Teaching Assistant, with Prof. Gianmario Motta (University of Pavia), at UESTC
+
+
+
+
+% industrial experience
+% \section*{Industrial Experience}
+% \indent
+
+% \textbf{Strawberry Inc.}, Beijing, China
+
+% \hspace{2em}Co-funder, 2077 - 
+
+% \textbf{Delicious Mango Holdings Ltd.}, London, UK
+
+% \hspace{2em}\LaTeX~Engineer Intern, 2076 - 2077
+
+% \textbf{CV Agency Co. Ltd.}, Hawaii, USA
+
+% \hspace{2em}CV Broker, 2075 - 2076
+% \begin{itemize}[leftmargin=5em, topsep=0pt, itemsep=0pt]
+%     \item Helped a three-year old child create her first CV
+%     \item Hilight 2 ...
+%     \item Hilight 3 ...
+% \end{itemize}
+
+% distinction, award, honor, and fellowship
+\section*{奖项}
+ADA Research Award (DTR Team), 2020
+
+Annual Dean's List, 2018--2021
+
+\section*{技术\&爱好}
+\begin{itemize}
+    \setlength{\itemsep}{1pt}
+    \setlength{\parskip}{0pt}
+    \setlength{\parsep}{0pt}
+    \item 常用程序语言: Java, Python, Rust, C/C++, OCaml, Coq, Haskell, \LaTeX
+    \item 技能: 数据结构与算法设计, 形式验证, 交互式证明
+    \item 兴趣: 古典音乐, 小提琴 (练习17年)
+\end{itemize}
+
+% reference 
+% \section*{Reference}
+% \indent
+
+% \textbf{Dr. John Smith}, Professor and Chair, Dept. of Curriculum Vitae, University of Standard
+
+% \hspace{2em}(+86) 181-xxxx-xxxx \hspace{2em} \url{xovee@ieee.org}
+
+
+\vfill
+
+\section*{\hfill\color{OliveGreen}\today}
+
+\end{document}
