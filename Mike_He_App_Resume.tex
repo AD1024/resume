@@ -1,7 +1,7 @@
 \documentclass{resume}
 \usepackage{hyperref}
 
-\usepackage[left=0.40in,top=0.3in,right=0.40in,bottom=0.3in]{geometry}
+\usepackage[left=0.75in,top=0.65in,right=0.75in,bottom=0.65in]{geometry}
 \usepackage{titlesec}
 \usepackage{enumitem}
 \usepackage{natbib, bibentry}
@@ -16,37 +16,33 @@
 \vspace{-0.5in}
 \bibliographystyle{unsrt}
 \nobibliography{publication.bib}
-	\MakeUppercase{\Large{\textbf{Mike He}}} \hfill {\em{\href{mailto:dh63@cs.washington.edu}{dh63@cs.washington.edu}}}\\
+	\MakeUppercase{\Large{\textbf{Deyuan (Mike) He}}} \hfill {\em{\href{mailto:mikehe@princeton.edu}{mikehe@princeton.edu}}}\\
 	\vspace{-5pt}\href{https://homes.cs.washington.edu/~dh63/}{https://homes.cs.washington.edu/$\sim$dh63/} \hfill{\em (206)~$\cdot$~887~$\cdot$~8588}
-
-
-%----------------------------------------------------------------------------------------
-%	Specifications
-%----------------------------------------------------------------------------------------
-
-	% \begin{rSection}{Skills}
-	% 	\begin{tabular}{ @{} >{\bfseries}l @{\hspace{4ex}} l }
-	% 		Languages & C/C++, Python, Java, Rust, OCaml, Haskell, Coq, Agda, \LaTeX \\
-	% 		Skills    & Certified \& Functional Programming, Automated Verification \\
-	% 		Others    & I've been playing the violin for 17 years. I like Symphonies composed by \href{https://imslp.org/wiki/Category:Mahler,_Gustav}{Gustav Mahler}.
-	% 	\end{tabular}
-	% \end{rSection}
-	% \vspace{-5pt}
 %----------------------------------------------------------------------------------------
 %	EDUCATION
 %----------------------------------------------------------------------------------------
 
 	\begin{rSection}{Education}
-	{\bf University of Washington, Seattle} \hfill {\em Sept. 2018---Est. Jun. 2022} \\
+    {\bf Princeton University, Princeton, NJ}\hfill {\em Est Sept. 2022---Est 2027} \\
+    \textit{Ph.D. in Computer Science}
+    \vspace{-5pt}
+    \begin{itemize}[leftmargin=*]
+        \setlength{\itemsep}{1pt}
+        \setlength{\parskip}{0pt}
+        \setlength{\parsep}{0pt}
+        \item Advisor(s): TBD
+        \item Fields of Study: Programming Languages \& Formal Verification \& Compilers \& MLSys
+    \end{itemize}
+	{\bf University of Washington, Seattle, WA} \hfill {\em Sept. 2018---Jun. 2022} \\
 	\textit{B.S. in Computer Science}
 	\vspace{-5pt}
         \begin{itemize}[leftmargin=*]
             \setlength{\itemsep}{1pt}
             \setlength{\parskip}{0pt}
 			\setlength{\parsep}{0pt}
-			\item Major GPA: 3.80 / 4.00
+			\item Major GPA: 3.80 / 4.00 (ranking not applicable)
             \item Fields of Study: Programming Languages \& Formal Verification \& Compilers \& MLSys
-            \item Honors: Dean's List (College of Art \& Science) 2018--Now; CRA Outstanding Undergraduate Researcher Award 2022 (Honorable Mention)
+            \item Honors: Dean's List (College of Art \& Science) 2018--2022; CRA Outstanding Undergraduate Researcher Award 2022 (Honorable Mention)
 		\end{itemize}
 	\end{rSection}
 	\vspace{-5pt}
@@ -56,7 +52,7 @@
             \setlength{\parskip}{0pt}
 			\setlength{\parsep}{0pt}
 			\item \bibentry{kirisame2021dynamic} (\small{*: Equal Contribution})
-			\item \textbf{(Under review at PLDI '22)} \bibentry{pldi22}
+			\item \bibentry{pldi22}
 		\end{enumerate}
         \vspace{-5pt}
 	\end{rSection}
@@ -73,30 +69,48 @@
     \vspace{1pt}
 
     \begin{rSection}{Experience}
+		\begin{rSubsection}{Intel Labs}{Mar. 2022---Now}{Formal Verification Research Intern}{Hillsboro, OR \& Remote}
+			\item Implemented Pyrope, an embedded domain-specific language that aims to enable correct-by-construction hardware modeling. Pyrope captures a major subset of Python syntax and, in addition, provides interfaces for proof-carrying programming in Python. Pyrope compiles to Dafny for automated verification.
+            \item Encoded the (multi-)montgomery reduction algorithm and successfully verified by compiling to Dafny.
+		\end{rSubsection}
+		\vspace{-5pt}
         \begin{rSubsection}{3LA, LATTE '21}{June. 2020---Now}{Research Assistant @ PLSE}{Seattle, WA}
-            \item \href{https://capra.cs.cornell.edu/latte21/paper/30.pdf}{\color{blue} \myul{3LA}} proposes an end-to-end compilation flow that provides \textbf{flexible} and \textbf{verifiable} compiler support for custom Deep Learning (\textbf{DL}) accelerators. 3LA has a builtin implementation agnostic pattern matching algorithm that is capable of find accelerator supported workloads in DL models leveraging the power of Equality Saturation. Moreover, 3LA addresses the mapping gap between DL models represented in high-level domain-specific languages (DSLs) and specialized accelerators using Instruction-level Abstraction (\textbf{ILA}) as the software-hardware interface.
-            \item \textbf{Talks \& Presentations}:
-            \vspace{-5pt}
-                \begin{enumerate}
-                    \setlength{\itemsep}{1pt}
-                    \setlength{\parskip}{0pt}
-                    \setlength{\parsep}{0pt}
-                    \item \textit{From DSLs to Accelerator-rich Platform: Addressing the Mapping Gap}, Sept. 2021 at Intel (presented jointly with \href{https://homes.cs.washington.edu/~sslyu/}{\color{blue} \myul {Steven Lyubomirsky}})
-                    \item \textit{Correct \& Flexible Compiler Support for Custom Accelerators}, Sept. 2021 at SRC ADA Center
-                \end{enumerate} 
+            \item \href{https://capra.cs.cornell.edu/latte21/paper/30.pdf}{\color{blue} \myul{3LA}} proposes an end-to-end compilation flow that provides \textbf{flexible} and \textbf{verifiable} compiler support for custom Deep Learning (\textbf{DL}) accelerators.
+            \item Implemented Flexible Matching: using equality saturation to search for optimal operator offloading to accelerators.
         \end{rSubsection}
         \vspace{-5pt}
         \begin{rSubsection}{Dynamic Tensor Rematerialization, ICLR '21}{Oct. 2019---Aug. 2021}{Research Assistant @ PLSE}{Seattle, WA}
-            \item \href{https://github.com/uwsampl/dtr-prototype}{\color{blue} \myul{Dynamic Tensor Rematerialization}} (\textbf{DTR}) is a greedy gradient checkpointing algorithm. DTR \textbf{enables} training Deep Learning models on memory-constrained devices. Unlike previous approaches, DTR does not need any information of the DL model architectures ahead-of-time; instead it saves memory by evicting and recomputing tensors \textbf{on the fly}, i.e. trading time for memory, which further exploit opportunities of using gradient checkpointing on DL trainings. DTR is comparably efficient as previous approaches: it requires only $\mathcal{O}(N)$ more forward computations when training a $N$-layer linear feed-forward neural network with an $\Omega(\sqrt{N})$ memory budget.
+            \item \href{https://github.com/uwsampl/dtr-prototype}{\color{blue} \myul{Dynamic Tensor Rematerialization}} (\textbf{DTR}) is a greedy gradient checkpointing algorithm. DTR \textbf{enables} training Deep Learning models on memory-constrained devices.
+            \item Implemented evaluations and nightly CI for DTR prototype in PyTorch.
+            \item Prepared submission artifact of DTR to ICLR '21.
         \end{rSubsection}
-        \vspace{-5pt}
-		\begin{rSubsection}{Paul G. Allen School, University of Washington}{Mar. 2021---June. 2021}{Teaching Assistant}{Seattle, WA}
+        % \vspace{-5pt}
+		% \begin{rSubsection}{Paul G. Allen School, University of Washington}{Mar. 2021---June. 2021}{Teaching Assistant}{Seattle, WA}
+		% 	\item Worked as a TA for \textbf{Principles of Programming Languages} (CSE 505)
+		% 	\item Helped re-designing CSE 505 and developing course materials for various topics about PL and formal verification (\textbf{Hoare Logic}, \textbf{Lambda Calculus} and \textbf{System F}, etc.) in \textbf{Coq}.
+		% \end{rSubsection}
+    \end{rSection}
+	\vspace{-5pt}
+    \begin{rSection}{Teaching}
+        \begin{rSubsection}{Paul G. Allen School, University of Washington}{Mar. 2021---June. 2021}{Teaching Assistant}{Seattle, WA}
 			\item Worked as a TA for \textbf{Principles of Programming Languages} (CSE 505)
 			\item Helped re-designing CSE 505 and developing course materials for various topics about PL and formal verification (\textbf{Hoare Logic}, \textbf{Lambda Calculus} and \textbf{System F}, etc.) in \textbf{Coq}.
 		\end{rSubsection}
     \end{rSection}
+    \vspace{-5pt}
+	\begin{rSection}{Talks \& Presentations}
+		\vspace{-5pt}
+		\begin{enumerate}
+			\setlength{\itemsep}{1pt}
+			\setlength{\parskip}{0pt}
+			\setlength{\parsep}{0pt}
+            \item \textit{Pyrope: Towards Provably Correct Hardware Modeling in Python/HeteroCL}, Jun. 2nd at Intel.
+			\item \textit{From DSLs to Accelerator-rich Platform: Addressing the Mapping Gap}, Sept. 2021 at Intel (presented jointly with \href{https://homes.cs.washington.edu/~sslyu/}{\color{blue} \myul {Dr. Steven Lyubomirsky}})
+			\item \textit{Correct \& Flexible Compiler Support for Custom Accelerators}, Sept. 2021 at SRC ADA Center
+		\end{enumerate} 
+	\end{rSection}
 	\vspace{-5pt}
-	\begin{rSection}{Service}
+	\begin{rSection}{Conference Service}
     	\begin{enumerate}
     		\setlength{\itemsep}{1pt}
             \setlength{\parskip}{0pt}
@@ -104,4 +118,69 @@
     		\item[$\rightarrow$] \textbf{MICRO '21}, Artifact Evaluation
     	\end{enumerate}
 	\end{rSection}
+    \begin{rSection}{Projects}
+        %------------------------------
+		%            Paxos
+		%------------------------------
+        \textbf{Paxos on KVStore Server}
+        \vspace{-5pt}
+        \begin{itemize}
+			\setlength{\itemsep}{1pt}
+            \setlength{\parskip}{0pt}
+			\setlength{\parsep}{0pt}
+			\item Implemented the Paxos consensus algorithm on KVStore servers
+			\item Course project of \textbf{CSE 452 - Distributed System} (UW)
+			\item \textbf{Language} \& \textsc{Tools}: \textbf{Java}
+			\item Keywords: Network Systems, Distributed Systems
+		\end{itemize}
+		\vspace{-5pt}
+        %------------------------------
+		%            Sager
+		%------------------------------
+		\textbf{\href{https://github.com/AD1024/Sager}{\color{blue} \myul{Sager}}} % \hfill {\em {\href{https://github.com/AD1024/Sager}{On GitHub}}}
+		\vspace{-5pt}
+		\begin{itemize}
+			\setlength{\itemsep}{1pt}
+            \setlength{\parskip}{0pt}
+			\setlength{\parsep}{0pt}
+			\item A demonic data structure synthesizer written in \textsc{rosette}, a \textbf{solver-aided} language based on \textbf{Racket}. \textbf{Sager} is able to exploit algorithm bottleneck by performing \textbf{symbolic exeuction} over the whole algorithm and using \textbf{SMT solver} to synthesize a sample data structure the algorithm works on that pushes the algorithm to its worst-case performance.
+			\item A demonic data structure synthesizer that aims to explore worst-cases performance of graph algorithms.
+			\item \textbf{Language} \& \textsc{Tools}: \textbf{Racket}, \textbf{Rosette}, \textsc{Z3}
+			\item Keywords: SMT Solver, Incremental Solving, Program Synthesis, Symbolic Execution
+		\end{itemize}
+		\vspace{-5pt}
+
+		%------------------------------
+		%      veripy
+		%------------------------------
+		\textbf{\href{https://github.com/AD1024/veripy}{\color{blue} \myul{veripy}}} % \hfill {\em {\href{https://github.com/AD1024/veripy}{On GitHub}}}
+		\vspace{-5pt}
+
+		\begin{itemize}
+			\setlength{\itemsep}{1pt}
+            \setlength{\parskip}{0pt}
+			\setlength{\parsep}{0pt}
+			\item An easy-to-use auto-active program verification library for Python programs written in \textbf{Python}.
+			\item The library is shallowly embedded in Python and the interface is implemented as \textbf{decorators}. It compiles annotated Python functions to \textbf{SMT} formulae and calls \textbf{SMT solver} to check whether it matches the given specification and gives a counter-example input when it violates any constraint.
+			\item \textbf{Language} \& \textsc{Tools}: \textbf{Python 3}, \textbf{SMT-LIB}, \textsc{Z3}, \textsc{pyparsing}
+			\item Keywords: SMT Solver, Static Analysis, Hoare Logic, Program Verification
+		\end{itemize}
+
+		%------------------------------
+		%      dtlc
+		%------------------------------
+		\textbf{\href{https://github.com/AD1024/dtlc}{\color{blue} \myul{dtlc}}} % \hfill {\em {\href{https://github.com/AD1024/dtlc}{On GitHub}}}
+		\vspace{-5pt}
+
+		\begin{itemize}
+			\setlength{\itemsep}{1pt}
+            \setlength{\parskip}{0pt}
+			\setlength{\parsep}{0pt}
+			\item Implemented \textbf{dependently-typed} lambda calculus in Martin-Löf style intuitionistic type theory.
+			\item Written in \textbf{OCaml}, \textbf{dtlc} has a language frontend \textbf{Lexer \& Parser} implemented using \textbf{Menhir}. Core language supports \textbf{type unification} with \textbf{metavariables} which makes the type inference stronger.
+			\item Implemented eliminators for \textbf{naturals}, \textbf{identity type}, \textbf{union type}, etc.
+			\item \textbf{Language} \& \textsc{Tools}: \textbf{OCaml}, \textsc{Menhir}, \textsc{Dune}
+			\item Keywords: Type Theory - Dependent Type, Proof Assistant, Functional Programming
+		\end{itemize}
+    \end{rSection}
 \end{document}
