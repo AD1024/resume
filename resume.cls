@@ -38,6 +38,11 @@
 \setlist[itemize]{topsep=0.25em, leftmargin=1.5pc}
 \setlist[enumerate]{topsep=0.25em, leftmargin=1.5pc}
 \RequirePackage[super]{nth}
+\RequirePackage{xcolor}
+\RequirePackage{soul}
+\RequirePackage{lipsum}
+\newcommand{\myul}[2][black]{\setulcolor{#1}\ul{#2}\setulcolor{black}}
+\newcommand{\myhref}[2][black]{\href{#1}{\color{blue} \myul[blue]{#2}}}
 
 \titleformat{\section}         % Customise the \section command 
   {\Large\scshape\raggedright} % Make the \section headers large (\Large),
