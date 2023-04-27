@@ -1,0 +1,70 @@
+% !TEX program = xelatex
+
+\documentclass{resume}
+\usepackage{hyperref}
+\usepackage{natbib, bibentry}
+\usepackage{etoolbox}
+\renewcommand{\bibsection}{}
+
+\begin{document}
+\bibliographystyle{unsrt}
+\nobibliography{pub}
+\pagenumbering{gobble} % suppress displaying page number
+\name{Mike (Deyuan) He}
+
+\basicInfo{
+  \email{mikehe@princeton.edu} \textperiodcentered\ 
+%   \phone{(+1) 206-887-8588} \textperiodcentered\ 
+  \linkedin[@Mike He]{https://www.linkedin.com/in/mike-he-31620b192/}}
+
+\section{\faInstitution\ Education}
+\datedsubsection{\textbf{Princeton University}, Princeton, NJ}{2022 -- Est. 2027}
+\textit{Ph.D.} in Computer Science\\
+Advisors: \href{https://www.cs.princeton.edu/~aartig/}{Prof. Aarti Gupta} \& \href{http://www.princeton.edu/~sharad/}{Prof. Sharad Malik}\\
+Fields of study: Compilers; Domain-specific Languages; Formal Methods; Software Systems
+\datedsubsection{\textbf{University of Washington}, Seattle, WA}{2018 -- 2022}
+\textit{B.S.} in Computer Science, GPA: 3.89/4.0 (\textsc{Cum Laude})\\
+Advisors: \href{https://ztatlock.net/}{Prof. Zachary Tatlock} \& \href{https://slyubomirsky.github.io/}{Dr. Steven Lybomirsky}\\
+Selected Honor: CRA Outstanding Undergraduate Researcher Award, Honorable Mention (2022)
+
+\section{\faConnectdevelop\ Industrial Experience}
+\datedsubsection{\textbf{Taichi Graphics}, Remote}{June. 2022 -- Sep. 2022}
+\role{Compiler R\&D Intern}{(Graphics/Compiler/\textbf{C++}/\textbf{Python})}
+Focusing on IR optimizations for \myhref[https://www.taichi-lang.org/]{Taichi Language}, including:
+\begin{itemize}
+  \item Refactoring and implementing local matrices for Frontend and CHI IR of Taichi Language
+  \item Extending IR optimizations (e.g. \textbf{dead code elimination}) to support the new matrix operations
+  \item Enabling large matrices and optimizations (e.g. \textbf{SIMD}) for matrix operations
+  \item Conducting experiments on performance gains; implementing fallback strategies to avoid performance regression on backends that do not support SIMD
+\end{itemize}
+
+\datedsubsection{\textbf{Intel Labs}, Hillsboro, OR}{Mar. 2022 -- June. 2022}
+\role{Formal Verification Research Intern}{(Formal Methods/\textbf{Python}/\textbf{Dafny})}
+Developed the \textbf{Py}\textit{rope} framework for \textbf{correct-by-construction} hardware modeling.
+\begin{itemize}
+  \item Enabled \textbf{proof-driven development} purely in Python
+  \item Encoded the correctness proof of (multi-)montgomery reduction algorithm in Python and verified successfully by compiling to Dafny
+  \item Unified ``sources of truth'' for correctness proofs and hardware model implementations
+\end{itemize}
+
+\section{\faLeanpub\ Selected Publications}
+\begin{itemize}
+    \item \bibentry{kirisame2021dynamic}
+    % \item \bibentry{latte21}
+    \item \bibentry{pldi22}
+\end{itemize}
+
+\section{\faCog\ Skills}
+\begin{itemize}
+    \item \textbf{Languages:} C/C++, Python, Rust, OCaml, Coq, Dafny, etc. (Open to other languages)
+    \item \textbf{Compiler \& Applied PL:} Equality Saturation, Static Analysis, Computer-aided Reasoning, SMT
+    \item \textbf{PL Theory:} Formal Verification, Type Theory, Mathematical Logic
+    \item \textbf{Systems:} Distributed Systems, Machine Learning Systems, Data Center Systems
+    \item \textbf{Others:} Computer Graphics, Design and Implementation of Algorithms and Data Structures
+\end{itemize}
+
+% \section{\faUsers\ Conference Service}
+% \begin{itemize}
+%     \item Artifact Evaluation, MICRO'21
+% \end{itemize}
+\end{document}

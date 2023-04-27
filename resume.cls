@@ -1,132 +1,119 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Medium Length Professional CV - RESUME CLASS FILE
-%
-% This template has been downloaded from:
-% http://www.LaTeXTemplates.com
-%
-% This class file defines the structure and design of the template. 
-%
-% Original header:
-% Copyright (C) 2010 by Trey Hunner
-%
-% Copying and distribution of this file, with or without modification,
-% are permitted in any medium without royalty provided the copyright
-% notice and this notice are preserved. This file is offered as-is,
-% without any warranty.
-%
-% Created by Trey Hunner and modified by www.LaTeXTemplates.com
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesClass{resume}[2015/05/25 An elegant Résumé class]
+\LoadClass[11pt]{article}
 
-\ProvidesClass{resume}[2010/07/10 v0.9 Resume class]
+% disable indent globally
+\setlength{\parindent}{0pt}
+% some general improvements, defines the XeTeX logo
+\RequirePackage{xltxtra}
+% use xifthen
+\RequirePackage{xifthen}
+% use hyperlink for email and url
+\RequirePackage{hyperref}
+\hypersetup{hidelinks}
+\RequirePackage{url}
+\urlstyle{tt}
+% use fontawesome
+\RequirePackage{fontawesome}
+% use xcolor for customizing color
+%\RequirePackage[usenames,dvipsnames]{xcolor}
+% loading fonts
+\RequirePackage{fontspec}
+% Main document font
+\setmainfont{TeX Gyre Pagella}
 
-\LoadClass[11pt,letterpaper]{article} % Font size and paper type
+\RequirePackage[
+	a4paper,
+	left=0.75in,
+	right=0.75in,
+	top=0.75in,
+	bottom=0.75in,
+	nohead
+]{geometry}
 
-\usepackage[parfill]{parskip} % Remove paragraph indentation
-\usepackage{array} % Required for boldface (\bf and \bfseries) tabular columns
-\usepackage{ifthen} % Required for ifthenelse statements
+\RequirePackage{titlesec}
+\RequirePackage{enumitem}
+\setlist{noitemsep} % removes spacing from items but leaves space around the whole list
+%\setlist{nosep} % removes all vertical spacing within and around the list
+\setlist[itemize]{topsep=0.25em, leftmargin=1.5pc}
+\setlist[enumerate]{topsep=0.25em, leftmargin=1.5pc}
+\RequirePackage[super]{nth}
+\RequirePackage{xcolor}
+\RequirePackage{soul}
+\RequirePackage{lipsum}
+\newcommand{\myul}[2][black]{\setulcolor{#1}\ul{#2}\setulcolor{black}}
+\newcommand{\myhref}[2][black]{\href{#1}{\color{blue} \myul[blue]{#2}}}
 
-\pagestyle{empty} % Suppress page numbers
+\titleformat{\section}         % Customise the \section command 
+  {\Large\scshape\raggedright} % Make the \section headers large (\Large),
+                               % small capitals (\scshape) and left aligned (\raggedright)
+  {}{0em}                      % Can be used to give a prefix to all sections, like 'Section ...'
+  {}                           % Can be used to insert code before the heading
+  [\titlerule]                 % Inserts a horizontal line after the heading
+\titlespacing*{\section}{0cm}{*1.8}{*1.8}
 
-%----------------------------------------------------------------------------------------
-%	HEADINGS COMMANDS: Commands for printing name and address
-%----------------------------------------------------------------------------------------
+\titleformat{\subsection}
+  {\large\raggedright}
+  {}{0em}
+  {}
+\titlespacing*{\subsection}{0cm}{*1.8}{*0.6}
 
-\def \name#1{\def\@name{#1}} % Defines the \name command to set name
-\def \@name {} % Sets \@name to empty by default
-
-\def \addressSep {$\diamond$} % Set default address separator to a diamond
-
-% One, two or three address lines can be specified 
-\let \@addressone \relax
-\let \@addresstwo \relax
-\let \@addressthree \relax
-
-% \address command can be used to set the first, second, and third address (last 2 optional)
-\def \address #1{
-  \@ifundefined{@addresstwo}{
-    \def \@addresstwo {#1}
-  }{
-  \@ifundefined{@addressthree}{
-  \def \@addressthree {#1}
-  }{
-     \def \@addressone {#1}
-  }}
+\newcommand{\datedsection}[2]{%
+  \section[#1]{#1 \hfill #2}%
+}
+\newcommand{\datedsubsection}[2]{%
+  \subsection[#1]{#1 \hfill #2}%
+}
+\newcommand{\datedline}[2]{%
+  {\par #1 \hfill #2 \par}%
 }
 
-% \printaddress is used to style an address line (given as input)
-\def \printaddress #1{
-  \begingroup
-    \def \\ {\addressSep\ }
-    \centerline{#1}
-  \endgroup
-  \par
-  \addressskip
+\newcommand{\name}[1]{
+  \centerline{\huge\scshape{#1}}
+  \vspace{1.25ex}
 }
 
-% \printname is used to print the name as a page header
-\def \printname {
-  \begingroup
-    \hfil{\MakeUppercase{\namesize\bf \@name}}\hfil
-    \nameskip\break
-  \endgroup
+% defines one's name
+% usage: \name{<name>}
+\newcommand{\nameTest}[1]{
+  {\large\scshape{#1}}
 }
 
-%----------------------------------------------------------------------------------------
-%	PRINT THE HEADING LINES
-%----------------------------------------------------------------------------------------
+% defines one's email
+% usage: \email{<email>}
+\newcommand{\email}[1]{\faEnvelope\ \href{mailto:#1}{#1}}
+% defines one's phone
+% usage: \phone{<phone>}
+\newcommand{\phone}[1]{\faPhone\ {#1}}
+% defines one's linkedin
+% usage: \linkedin{<linkedin>}
+\newcommand{\linkedin}[2][]{\faLinkedin\ 
+  \ifthenelse{\isempty{#1}}%
+    {\href{#2}{#2}}
+    {\href{#2}{#1}}}
+\newcommand{\linkedinsquare}[2][]{\faLinkedinSquare\ 
+  \ifthenelse{\isempty{#1}}%
+    {\href{#2}{#2}}
+    {\href{#2}{#1}}}
+% defines one's GitHub
+% usage: \github{<github>}
+\newcommand{\github}[2][]{\faGithub\ 
+  \ifthenelse{\isempty{#1}}%
+    {\href{#2}{#2}}
+    {\href{#2}{#1}}}
+% defines one's homepage
+% usage: \homepage{<homepage>}
+\newcommand{\homepage}[2][]{\faLink\ 
+  \ifthenelse{\isempty{#1}}%
+    {\href{#2}{#2}}
+    {\href{#2}{#1}}}
 
-\let\ori@document=\document
-\renewcommand{\document}{
-  \ori@document  % Begin document
-  \printname % Print the name specified with \name
-  \@ifundefined{@addressone}{}{ % Print the first address if specified
-    \printaddress{\@addressone}}
-  \@ifundefined{@addresstwo}{}{ % Print the second address if specified
-    \printaddress{\@addresstwo}}
-     \@ifundefined{@addressthree}{}{ % Print the third address if specified
-    \printaddress{\@addressthree}}
+\newcommand{\basicInfo}[1]{
+  \centerline{\sffamily\large{#1}}
+  \vspace{1.5ex}
 }
 
-%----------------------------------------------------------------------------------------
-%	SECTION FORMATTING
-%----------------------------------------------------------------------------------------
-
-% Defines the rSection environment for the large sections within the CV
-\newenvironment{rSection}[1]{ % 1 input argument - section name
-  \sectionskip
-  \textsc{\Large #1} % Section title
-  \sectionlineskip
-  \hrule % Horizontal line
-  \begin{list}{}{ % List for each individual item in the section
-    \setlength{\leftmargin}{1.5em} % Margin within the section
-  }
-  \item[]
-}{
-  \end{list}
+\newcommand{\role}[2]{
+  {\par \textit{#1} ~ #2 \par}
+  \vspace{0.85ex}
 }
-
-%----------------------------------------------------------------------------------------
-%	WORK EXPERIENCE FORMATTING
-%----------------------------------------------------------------------------------------
-
-\newenvironment{rSubsection}[4]{ % 4 input arguments - company name, year(s) employed, job title and location
- {\bf #1} \hfill {#2} % Bold company name and date on the right
- \ifthenelse{\equal{#3}{}}{}{ % If the third argument is not specified, don't print the job title and location line
-  \\
-  {\em #3} \hfill {\em #4} % Italic job title and location
-  }\smallskip
-  \begin{list}{$\cdot$}{\leftmargin=0em} % \cdot used for bullets, no indentation
-    \vspace{-1pt}
-   \itemsep -0.5em \vspace{-0.5em} % Compress items in list together for aesthetics
-  }{
-  \end{list}
-  \vspace{0.5em} % Some space after the list of bullet points
-}
-
-% The below commands define the whitespace after certain things in the document - they can be \smallskip, \medskip or \bigskip
-\def\namesize{\huge} % Size of the name at the top of the document
-\def\addressskip{\smallskip} % The space between the two address (or phone/email) lines
-\def\sectionlineskip{\medskip} % The space above the horizontal line for each section 
-\def\nameskip{\bigskip} % The space after your name at the top
-\def\sectionskip{\medskip} % The space after the heading section

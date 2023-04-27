@@ -1,0 +1,103 @@
+% !TEX program = xelatex
+
+\documentclass{resume}
+\usepackage{hyperref}
+\usepackage{natbib, bibentry}
+\usepackage{etoolbox}
+\renewcommand{\bibsection}{}
+
+\begin{document}
+\bibliographystyle{unsrt}
+\nobibliography{pub}
+\pagenumbering{gobble} % suppress displaying page number
+\name{Mike (Deyuan) He}
+
+\basicInfo{
+  \email{mikehe@princeton.edu} \textperiodcentered\ 
+%   \phone{(+1) 206-887-8588} \textperiodcentered\ 
+  \linkedin[@Mike He]{https://www.linkedin.com/in/mike-he-31620b192/}}
+
+\section{\faInstitution\ Education}
+\datedsubsection{\textbf{Princeton University}, Princeton, NJ}{2022 -- Est. 2027}
+\textit{Ph.D.} in Computer Science\\
+Advisors: \href{https://www.cs.princeton.edu/~aartig/}{Prof. Aarti Gupta} \& \href{http://www.princeton.edu/~sharad/}{Prof. Sharad Malik}\\
+Fields of study: Compilers; Domain-specific Languages; Formal Methods; Software Systems
+\datedsubsection{\textbf{University of Washington}, Seattle, WA}{2018 -- 2022}
+\textit{B.S.} in Computer Science, GPA: 3.89/4.0 (\textsc{Cum Laude})\\
+Advisors: \href{https://ztatlock.net/}{Prof. Zachary Tatlock} \& \href{https://slyubomirsky.github.io/}{Dr. Steven Lybomirsky}\\
+Selected Honor: CRA Outstanding Undergraduate Researcher Award, Honorable Mention (2022)
+
+\section{\faConnectdevelop\ Experience}
+\datedsubsection{\textbf{Taichi Graphics}, Remote}{June. 2022 -- Sep. 2022}
+\role{Compiler R\&D Intern}{(Graphics/Compiler/\textbf{C++}/\textbf{Python})}
+Focusing on IR optimizations for \myhref[https://www.taichi-lang.org/]{Taichi Language}, including:
+\begin{itemize}
+  \item Refactoring and implementing local matrices for Frontend and CHI IR of Taichi Language
+  \item Extending IR optimizations (e.g. \textbf{dead code elimination}) to support the new matrix operations
+  \item Enabling large matrices and optimizations (e.g. \textbf{SIMD}) for matrix operations
+  \item Conducting experiments on performance gains; implementing fallback strategies to avoid performance regression on backends that do not support SIMD
+\end{itemize}
+
+\datedsubsection{\textbf{Intel Labs}, Hillsboro, OR}{Mar. 2022 -- June. 2022}
+\role{Formal Verification Research Intern}{(Formal Methods/\textbf{Python}/\textbf{Dafny})}
+Developed the \textbf{Py}\textit{rope} framework for \textbf{correct-by-construction} hardware modeling.
+\begin{itemize}
+  \item Enabled \textbf{proof-driven development} purely in Python
+  \item Encoded the correctness proof of (multi-)montgomery reduction algorithm in Python and verified successfully by compiling to Dafny
+  \item Unified ``sources of truth'' for correctness proofs and hardware model implementations
+\end{itemize}
+
+\datedsubsection{\textbf{Semiconductor Research Corporation}, Remote}{Sep. 2019 -- Mar. 2022}
+\role{Research Scholar}{(MLSys/Formal Methods/\textbf{Rust}/\textbf{Python}/\textbf{C++})}
+Participated research projects funded by SRC, including Dynamic Tensor Rematerialization (DTR) and 3LA and collaborated on papers submitted to ICLR'21 and LATTE'21 (a Workshop of ASPLOS). 
+\begin{itemize}
+    \item Contributed to the evaluation infrastructure and submission artifact for DTR
+    \item Implemented flexible matching algorithm for 3LA, which applies equality saturation to explore accelerator offloading for Deep Neural Networks
+    \item Participated in the ADA Center Annual Fall Symposium
+    \item Presented flexible matching at the ADA Center liaison meeting
+\end{itemize}
+
+\section{\faLeanpub\ Publications}
+\begin{itemize}
+    \item \bibentry{kirisame2021dynamic}
+    \item \bibentry{latte21}
+    \item \bibentry{pldi22}
+\end{itemize}
+
+\section{\faCog\ Skills}
+\begin{itemize}
+    \item \textbf{Languages:} C/C++, Python, Rust, OCaml, Coq, Dafny, etc. (Open to other languages)
+    \item \textbf{Compiler \& Applied PL:} Equality Saturation, Static Analysis, Computer-aided Reasoning, SMT
+    \item \textbf{PL Theory:} Formal Verification, Type Theory, Mathematical Logic
+    \item \textbf{Systems:} Distributed Systems, Machine Learning Systems, Data Center Systems
+    \item \textbf{Others:} Computer Graphics, Design and Implementation of Algorithms and Data Structures
+\end{itemize}
+
+\section{\faGithub\ Related Projects \& Open-source Contributions}
+\begin{itemize}
+    \item \myhref[https://github.com/taichi-dev/taichi]{Taichi}: contributed to matrix representations refactor and optimizations.\hfill \textbf{C++}, \textbf{Python}, \textsc{LLVM}
+    \item \myhref[https://github.com/AD1024/veripy]{veripy}: an experimental auto-active verification framework for Python.\hfill \textbf{Python}, \textsc{Z3}
+    \item \myhref[https://github.com/AD1024/dtlc]{dtlc}: an implementation of dependently-typed lambda calculus with MLTT.\hfill \textbf{OCaml}, \textsc{Menhir}
+    \item \myhref[https://github.com/AD1024/flexmatch]{FlexMatch}: implemented flexible offloading for deep learning accelerators.\hfill \textbf{Rust}, \textbf{Python}, \textsc{TVM}
+    \item \myhref[https://github.com/gussmith23/glenside]{Glenside}: contributed to unifying Glenside and TVM Relay programs.\hfill \textbf{Rust}, \textsc{TVM}
+    \item \myhref[https://github.com/AD1024/Sager]{Sager}: a demonic graph structure synthesizer for wrost-case algorithm analysis. \hfill \textbf{Racket}, \textsc{Rosette}
+\end{itemize}
+
+\section{\faSlideshare\ Talks \& Presentations}
+\begin{itemize}
+    \item \myhref[https://homes.cs.washington.edu/~dh63/assets/talks/Pyrope_slides.pptx]{Towards correct-by-construction hardware modeling in Python/HeteroCL} at Intel (June. 2022)
+    \item \myhref[https://docs.google.com/presentation/d/13YihSVXt-t_Lu7ddCy7zxNiqM6zA-Z1Q/edit]{Correct \& Flexible Compiler Support for Custom Accelerators} at SRC ADA Center (Sep. 2021)
+    \item From DSLs to Accelerator-rich Platform Implementations: Addressing the mapping gap \\at Intel (Sep. 2021, jointly presented with Dr. Steven Lybomirsky)
+\end{itemize}
+
+\section{\faMortarBoard\ Teaching}
+\datedsubsection{\textbf{University of Washington}, Seattle, WA}{}
+\begin{itemize}
+    \item Principle of Programming Languages (CSE 505)
+\end{itemize}
+
+\section{\faUsers\ Academic Service}
+\begin{itemize}
+    \item Artifact Evaluation, MICRO'21
+\end{itemize}
+\end{document}
