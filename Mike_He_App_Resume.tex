@@ -1,3 +1,4 @@
+% !TEX program = xelatex
 \documentclass{resume}
 \usepackage{hyperref}
 
@@ -5,6 +6,8 @@
 \usepackage{titlesec}
 \usepackage{enumitem}
 \usepackage{natbib, bibentry}
+\usepackage{fontspec}
+\setmainfont{Georgia}
 \titlespacing*{\rSection}{0pt}{1.1\baselineskip}{\baselineskip}
 % \name{Mike He}
 % \address{1135 NE CAMPUS PKWY \\ Seattle, WA 98105}
@@ -16,8 +19,11 @@
 \vspace{-0.5in}
 \bibliographystyle{unsrt}
 \nobibliography{publication.bib}
-	\MakeUppercase{\Large{\textbf{Deyuan (Mike) He}}} \hfill {\em{\href{mailto:mikehe@princeton.edu}{mikehe@princeton.edu}}}\\
-	\vspace{-5pt}\href{https://homes.cs.washington.edu/~dh63/}{https://homes.cs.washington.edu/$\sim$dh63/} \hfill{\em (206)~$\cdot$~887~$\cdot$~8588}
+\MakeUppercase{\Large{\textbf{Deyuan (Mike) He}}}
+%\hfill {\em{\href{mailto:mikehe@princeton.edu}{mikehe@princeton.edu}}}
+%\vspace{-5pt}
+\hfill\href{https://ad1024.github.io/}{https://ad1024.github.io/}\\ {\em{\href{mailto:mikehe@princeton.edu}{mikehe@princeton.edu}}}
+\vspace{-5pt}
 %----------------------------------------------------------------------------------------
 %	EDUCATION
 %----------------------------------------------------------------------------------------
@@ -46,22 +52,13 @@
 		\end{itemize}
 	\end{rSection}
 	\vspace{-5pt}
-    \begin{rSection}{Publications}
-		\begin{enumerate}
-			\setlength{\itemsep}{1pt}
+    \begin{rSection}{Selected Publications}
+		\begin{enumerate}[leftmargin=5pt]
+			\setlength{\itemsep}{5pt}
             \setlength{\parskip}{0pt}
 			\setlength{\parsep}{0pt}
 			\item \bibentry{kirisame2021dynamic} (\small{*: Equal Contribution})
 			\item \bibentry{pldi22}
-		\end{enumerate}
-        \vspace{-5pt}
-	\end{rSection}
-	\vspace{1pt}
-	\begin{rSection}{Workshop Papers}
-		\begin{enumerate}
-			\setlength{\itemsep}{1pt}
-            \setlength{\parskip}{0pt}
-			\setlength{\parsep}{0pt}
 			\item \bibentry{latte21} (\small{*: Equal Contribution})
 		\end{enumerate}
         \vspace{-5pt}
@@ -70,17 +67,18 @@
 
     \begin{rSection}{Experience}
 		\begin{rSubsection}{Taichi Graphics}{Jun. 2022---Sept. 2022}{Compiler R\&D Intern}{Remote}
-			\item Working on optimizations for high-level intermediate representation of Taichi.
-			\item Exploring equality saturation for Taichi.
+			\item Implement matrix representations for low-level IR to optimize the performance by vectorization.
+			\item Enable CHI IR to represent matrices and vectors as whole and implement code generation for LLVM.
+			\item Benchmark use cases under different scenarios (e.g. sparse v.s. dense matrices).
 		\end{rSubsection}
-		\begin{rSubsection}{Intel Labs}{Mar. 2022---Jun. 2022}{Formal Verification Research Intern}{Hillsboro, OR \& Remote}
-			\item Implemented Pyrope, an embedded domain-specific language that aims to enable correct-by-construction hardware modeling. Pyrope captures a major subset of Python syntax and, in addition, provides interfaces for proof-carrying programming in Python. Pyrope compiles to Dafny for automated verification.
-            \item Encoded the (multi-)montgomery reduction algorithm and successfully verified by compiling to Dafny.
+		\begin{rSubsection}{Intel Labs}{Mar. 2022---Jun. 2022}{Formal Verification Research Intern}{Remote \& Hillsboro, OR}
+			\item Implemented Pyrope, a domain-specific language embedded in Python that aims to enable \textbf{correct-by-construction hardware modeling}. Pyrope captures a major subset of Python syntax and, in addition, provides interfaces for proof-carrying programming in Python. Pyrope compiles to Dafny for automated verification.
+            \item Encoded the proof of (multi-)montgomery reduction algorithm and successfully verified by compiling to Dafny.
 		\end{rSubsection}
 		\vspace{-5pt}
         \begin{rSubsection}{3LA, LATTE '21}{Jun. 2020---Now}{Research Assistant @ PLSE}{Seattle, WA}
             \item \href{https://capra.cs.cornell.edu/latte21/paper/30.pdf}{\color{blue} \myul{3LA}} proposes an end-to-end compilation flow that provides \textbf{flexible} and \textbf{verifiable} compiler support for custom Deep Learning (\textbf{DL}) accelerators.
-            \item Implemented Flexible Matching: using equality saturation to search for optimal operator offloading to accelerators.
+            \item Implemented Flexible Matching: using equality saturation to search for optimal operator offloading to accelerators. Flexible Matching is able to efficiently explore the space of equivalent model implementations modulo a set of rewrite rules and extract the optimal model that has been found.
         \end{rSubsection}
         \vspace{-5pt}
         \begin{rSubsection}{Dynamic Tensor Rematerialization, ICLR '21}{Oct. 2019---Aug. 2021}{Research Assistant @ PLSE}{Seattle, WA}
@@ -104,11 +102,11 @@
     \vspace{-5pt}
 	\begin{rSection}{Talks \& Presentations}
 		\vspace{-5pt}
-		\begin{enumerate}
-			\setlength{\itemsep}{1pt}
+		\begin{enumerate}[leftmargin=5pt]
+			\setlength{\itemsep}{5pt}
 			\setlength{\parskip}{0pt}
 			\setlength{\parsep}{0pt}
-            \item \textit{Pyrope: Towards Provably Correct Hardware Modeling in Python/HeteroCL}, Jun. 2nd at Intel.
+            \item \textit{Pyrope: Towards Provably Correct Hardware Modeling in Python/HeteroCL}, Jun. 2nd at Intel Labs.
 			\item \textit{From DSLs to Accelerator-rich Platform: Addressing the Mapping Gap}, Sept. 2021 at Intel (presented jointly with \href{https://homes.cs.washington.edu/~sslyu/}{\color{blue} \myul {Dr. Steven Lyubomirsky}})
 			\item \textit{Correct \& Flexible Compiler Support for Custom Accelerators}, Sept. 2021 at SRC ADA Center
 		\end{enumerate} 
