@@ -6,6 +6,9 @@
 \usepackage{etoolbox}
 \usepackage{soul}
 \renewcommand{\bibsection}{}
+\makeatletter
+\newcommand{\ssymbol}[1]{^{\@fnsymbol{#1}}}
+\makeatother
 
 \begin{document}
 \bibliographystyle{unsrt}
@@ -58,7 +61,8 @@ Selected Honor: CRA Outstanding Undergraduate Researcher Award, Honorable Mentio
     \item Extended Glenside to support a more diverse set of input models
     \item Implemented the compilation pipeline for VTA
     \item Implemented handwritten digit recognition (on CIFAR) and image classification (on ImageNet) for VTA. Passed the mapping validation using 3LA.
-    \item Co-authored the paper under review at \textbf{ACM TODAES}.
+    \item Co-authored a \textbf{ASPLOS LATTE'21} workshop paper
+    \item Co-authored a paper under review at \textbf{ACM TODAES}.
 \end{itemize}
 \datedsubsection{\textbf{Dynamic Tensor Rematerialization}}{Jan. 2020 -- Oct. 2020}
 \textbf{TL;DR} Dynamic Tensor Materialization (DTR) is an online, heuristic-based checkpointing algorithm that enables DL inference under constrained memory budgets. My contributions are
@@ -153,14 +157,19 @@ Responsible for conducting research with Prof. Zachary Tatlock, specifically,
     \item \textbf{PL Theory:} Formal Verification, Type Theory, Mathematical Logic
     \item \textbf{Systems:} Distributed Systems, Machine Learning Systems, Data Center Systems
     \item \textbf{Others:} Algorithms and Data Structures
-    \item \textbf{Fun Fact:} I am more experienced in playing the violin than coding \faMusic; I have:
+    \item \textbf{Fun Fact:} I am more seasoned in playing the violin than coding \faMusic; I have:
     \begin{enumerate}
-        \item The Former Lv.9, the new highest level equivalent, certified by \href{https://en.wikipedia.org/wiki/Central_Conservatory_of_Music}{{\color{blue} \ul{Central Conservative of Music}}};
+        \item a Lv.9 certificate$\ssymbol{1}$ (similar to \href{https://en.wikipedia.org/wiki/ABRSM}{{\color{blue}\ul{ABRSM}}} Grade 8) certified by \href{https://en.wikipedia.org/wiki/Central_Conservatory_of_Music}{{\color{blue} \ul{Central Conservative of Music}}};
         \item $>$ \textbf{20-year} violin solo experience;
-        \item Multiple 1st Prizes (various local competitions in Beijing) and a Silver medal (Beijing regional);
+        \item Multiple 1st Prizes (various local competitions in Beijing) and a Silver medal (Beijing regional)$\ssymbol{2}$;
         \item 6-year experience with symphony orchestras; 3-year experience as \textit{the 2nd Principal Violinist};
         \item 3-year experience with a piano quartet/quintet and multiple string quartets (with 1 CD made);
-        \item $4$ public performances with a philharmonic orchestra at the \href{https://en.wikipedia.org/wiki/National_Centre_for_the_Performing_Arts_(China)}{\color{blue}{\ul{National Centre for the Performing Arts}}}, Beijing, China
+        \item $\sim4$ public concerts with a philharmonic orchestra$^\star$ at the \href{https://en.wikipedia.org/wiki/National_Centre_for_the_Performing_Arts_(China)}{\color{blue}{\ul{National Centre for the Performing Arts}}}, Beijing, China.
     \end{enumerate}
+    \hfill $\ssymbol{1}:$ \textit{The highest level for non-professionals}
+
+    \hfill$\ssymbol{2}:$ \textit{Awarded during middle and high school years.}
+
+    \hfill$\star:$ \textit{The Beijing National Day School Philharmonic Orchestra}
 \end{itemize}
 \end{document}
