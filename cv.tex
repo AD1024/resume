@@ -34,43 +34,47 @@ Selected Honor: CRA Outstanding Undergraduate Researcher Award, Honorable Mentio
 
 \section{\faConnectdevelop\ Research}
 \datedsubsection{\textbf{\textsc{CatsTail}: Synthesizing Packet Programs via Equality Saturation}}{June. 2023 -- Now}
-\textbf{TL;DR} \textsc{CatsTail} is an equality saturation-based P4 program synthesizer. Previous works use SKETCH to synthesize the program, which takes too long to make debugging on actual hardware possible. Compared with SKETCH, \textsc{CatsTail} is up to \textbf{30x/2000x} faster (preliminary) in finding the optimal stage allocation for Intel Tofino/Domino (Banzai ALU). I lead the design and implementation of \textsc{CatsTail}.
+\textbf{TL;DR} \textsc{CatsTail} is an equality saturation-based P4 program synthesizer. Previous works use \textbf{SKETCH} to synthesize the program, which takes too long to make debugging on actual hardware possible. Compared with SKETCH, \textsc{CatsTail} is up to \textbf{30x/2000x} faster (preliminary) in finding the optimal stage allocation for Intel Tofino/Domino (Banzai ALU). I lead the design and implementation of \textsc{CatsTail}.
 
 \datedsubsection{\textbf{Verifiying correctness of SW/HW mappings}}{June. 2023 -- Now}
-\textbf{TL;DR} hex is a language for accelerator operation explication and a tool for verifying the software-hardware mapping correctness. My contribution and work in progress are
+\textbf{TL;DR} hex is a language for accelerator operation explication and a tool for verifying the software-hardware mapping correctness. My contributions and work in progress are
 \begin{itemize}
-    \item Implemented a case study for FlexASR pooling instructions and verified its correctness against the software implementations
-    \item Designing memory layout mapping invariant inference/generation algorithm
+    \item Implemented a case study for FlexASR pooling instructions in hex and verified its correctness against the software implementations.
+    \item Designing memory layout mapping invariant inference/generation algorithm.
 \end{itemize}
 \datedsubsection{\textbf{Improving Term Extraction with Acyclic Constraints}}{Sep. 2022 -- Feb. 2023}
-\textbf{TL;DR} To have a better term extraction algorithm for \texttt{egg}, an equality saturation framework, we devise the encoding using Weighted partial MaxSAT and include a set of \textit{Acyclic constraints} that ensures the acyclicity of the extracted optimal term. Our encoding demonstrates better solver time ($\sim$3x speed up) for the case study of extracting tensor programs. My contributions include
-\begin{itemize}
-    \item Devised the constraint
-    \item Optimized the constraints with Tesitin encoding, which exponentially reduces the search space.
-    \item Developed the application-agnostic term extractor
-    \item Implemented the case study using Glenside examples
-    \item Authored the workshop paper at \textbf{PLDI EGRAPHS'23}
-\end{itemize}
+\textbf{TL;DR} To have a better term extraction algorithm for \texttt{egg}, an equality saturation framework, we devise the encoding using Weighted partial MaxSAT and include a set of \textit{Acyclic constraints} that ensures the acyclicity of the extracted term. Our encoding demonstrates better solver time ($\sim$3x speed up) for the case study of extracting tensor programs. I led the development of the case study and the encoding, and authored the workshop paper at \textbf{PLDI EGRAPHS'23}.
+% My contributions include
+% \begin{itemize}
+%     \item Devised the constraint
+%     \item Optimized the constraints with Tesitin encoding, which exponentially reduces the search space.
+%     \item Developed the application-agnostic term extractor
+%     \item Implemented the case study using Glenside examples
+%     \item Authored the workshop paper at \textbf{PLDI EGRAPHS'23}
+% \end{itemize}
 % Optimal term extraction in \texttt{egg}, an equality saturation framework over-approximates cycles in the egraph and can yield sub-optimal solutions. The alternative ILP encoding formulates the acyclicity by solving the topological order of the AST nodes, which takes too long to solve and is not practical. In this work, we devise the encoding using Weighted partial MaxSAT and include a set of \textit{Acyclic constraints} that ensures the acyclicity of the extracted optimal term.
+\datedsubsection{\textbf{Py}\textit{rope}: Towards Correct-by-construction Hardware Modeling}{Mar. 2022 -- June. 2022}
+\textbf{TL;DR} \textbf{Py}\textit{rope} is a Python-based framework for high-level hardware modeling. \textbf{Py}\textit{rope} enables expressing proofs and guarantees of modeled instruction in Python and transpiles hardware models into Dafny for verification.
+\textbf{I led the development of }\textbf{Py}\textit{rope}\textbf{ during my internship at Intel Labs.}
+
 \datedsubsection{\textbf{3LA: Application-level Validation of Accelerator Designs}}{June. 2021 -- June. 2022}
 \textbf{TL;DR} 3LA is a software/hardware co-verification methodology for DL accelerators that aids hardware developers in performing early-stage application-level debugging. My contributions are
 % 3LA is a software/hardware co-verification methodology for DL accelerators. 3LA takes DL applications from various frontends as inputs and uses \textit{flexible matching} to identify opportunities of invoking the accelerator in the DNN. 3LA methodology is evaluated on 3 open-source accelerator platforms: FlexASR, HLSCNN, and VTA.
 % The evaluation shows that by adopting 3LA, developers identified numerical issues with the custom numerics (AdptivFloat) of HLSCNN, which caused dramatic accuracy loss in some of the applications. My contributions are
 \begin{itemize}
-    \item Lead the development of Flexible matching
-    \item Extended Glenside to support a more diverse set of input models
-    \item Implemented the compilation pipeline for VTA
+    \item Led the development of \textit{flexmatch} and extended Glenside to support a more diverse set of models.
+    \item Implemented the compilation pipeline for VTA using BYOC interfaces of TVM.
     \item Implemented handwritten digit recognition (on CIFAR) and image classification (on ImageNet) for VTA. Passed the mapping validation using 3LA.
-    \item Co-authored a \textbf{ASPLOS LATTE'21} workshop paper
+    \item Co-authored a \textbf{ASPLOS LATTE'21} workshop paper.
     \item Co-authored a paper under review at \textbf{ACM TODAES}.
 \end{itemize}
 \datedsubsection{\textbf{Dynamic Tensor Rematerialization}}{Jan. 2020 -- Oct. 2020}
 \textbf{TL;DR} Dynamic Tensor Materialization (DTR) is an online, heuristic-based checkpointing algorithm that enables DL inference under constrained memory budgets. My contributions are
 % Dynamic Tensor Materialization (DTR) is an online, heuristic-based checkpointing algorithm for ML inference when the intermediate activations cannot fit on the GPU memory. DTR evicts and re-computes the intermediate tensors when necessary. The evaluations on real-world DL applications show that DTR achieves near-optimal performance. My contributions are
 \begin{itemize} 
-    \item Identified problems in the PyTorch DTR implementation
-    \item Designed the evaluation framework for DTR and extended the case studies to multiple new DL applications (e.g. Unrolled GAN, UNet)
-    \item Co-authored the paper published at \textbf{ICLR'21}
+    \item Identified problems in the PyTorch DTR implementation.
+    \item Designed the evaluation framework for DTR and extended the case studies to multiple new DL applications (e.g. Unrolled GAN, UNet).
+    \item Co-authored the paper published at \textbf{ICLR'21}.
 \end{itemize}
 
 \section{\faLeanpub\ Publications}
@@ -159,7 +163,7 @@ Responsible for conducting research with Prof. Zachary Tatlock, specifically,
     \item \textbf{Others:} Algorithms and Data Structures
     \item \textbf{Fun Fact:} I am more seasoned in playing the violin than coding \faMusic; I have:
     \begin{enumerate}
-        \item a Lv.9 certificate$\ssymbol{1}$ (similar to \href{https://en.wikipedia.org/wiki/ABRSM}{{\color{blue}\ul{ABRSM}}} Grade 8) certified by \href{https://en.wikipedia.org/wiki/Central_Conservatory_of_Music}{{\color{blue} \ul{Central Conservative of Music}}};
+        \item a Lv.9 certificate$\ssymbol{1}$ (similar to \href{https://www.abrsm.org/en-us/performance-grades/about-performance-grades}{{\color{blue}\ul{ABRSM}}} Grade 8) issued by \href{https://en.wikipedia.org/wiki/Central_Conservatory_of_Music}{{\color{blue} \ul{Central Conservative of Music}}};
         \item $>$ \textbf{20-year} violin solo experience;
         \item Multiple 1st Prizes (various local competitions in Beijing) and a Silver medal (Beijing regional)$\ssymbol{2}$;
         \item 6-year experience with symphony orchestras; 3-year experience as \textit{the 2nd Principal Violinist};
