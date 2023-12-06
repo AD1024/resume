@@ -4,7 +4,11 @@
 \usepackage{hyperref}
 \usepackage{natbib, bibentry}
 \usepackage{etoolbox}
+\usepackage{soul}
 \renewcommand{\bibsection}{}
+\makeatletter
+\newcommand{\ssymbol}[1]{^{\@fnsymbol{#1}}}
+\makeatother
 
 \begin{document}
 \bibliographystyle{unsrt}
@@ -20,48 +24,134 @@
 \section{\faInstitution\ Education}
 \datedsubsection{\textbf{Princeton University}, Princeton, NJ}{2022 -- Est. 2027}
 \textit{Ph.D.} in Computer Science\\
-Advisors: \href{https://www.cs.princeton.edu/~aartig/}{Prof. Aarti Gupta} \& \href{http://www.princeton.edu/~sharad/}{Prof. Sharad Malik}\\
-Fields of study: Compilers; Domain-specific Languages; Formal Methods; Software Systems
+\textit{M.A.} in Computer Science, est. 2024\\
+Advisor: \href{https://www.cs.princeton.edu/~aartig/}{Prof. Aarti Gupta}\\
+Fields of study: Compilers; Formal Verification; Distributed Systems; Equality Saturation
 \datedsubsection{\textbf{University of Washington}, Seattle, WA}{2018 -- 2022}
 \textit{B.S.} in Computer Science, GPA: 3.89/4.0 (\textsc{Cum Laude})\\
-Advisors: \href{https://ztatlock.net/}{Prof. Zachary Tatlock} \& \href{https://slyubomirsky.github.io/}{Dr. Steven Lybomirsky}\\
+Advisors: \href{https://ztatlock.net/}{Prof. Zachary Tatlock} \& \href{https://slyubomirsky.github.io/}{Dr. Steven Lyubomirsky}\\
 Selected Honor: CRA Outstanding Undergraduate Researcher Award, Honorable Mention (2022)
 
-\section{\faConnectdevelop\ Experience}
-\datedsubsection{\textbf{Taichi Graphics}, Remote}{June. 2022 -- Sep. 2022}
-\role{Compiler R\&D Intern}{(Graphics/Compiler/\textbf{C++}/\textbf{Python})}
-Focusing on IR optimizations for \myhref[https://www.taichi-lang.org/]{Taichi Language}, including:
+\section{\faConnectdevelop\ Research}
+\datedsubsection{\textbf{\textsc{CatsTail}: Synthesizing Packet Programs via Equality Saturation}}{June. 2023 -- Now}
+\textbf{TL;DR} \textsc{CatsTail} is an equality saturation-based P4 program synthesizer. Previous works use \textbf{SKETCH} to synthesize the program, which takes too long to make debugging on actual hardware possible. Compared with SKETCH, \textsc{CatsTail} is up to \textbf{30x/2000x} faster (preliminary) in finding the optimal stage allocation for Intel Tofino/Domino (Banzai ALU). I lead the design and implementation of \textsc{CatsTail}.
+
+\datedsubsection{\textbf{Verifiying correctness of SW/HW mappings}}{June. 2023 -- Now}
+\textbf{TL;DR} hex is a language for accelerator operation explication and a tool for verifying the software-hardware mapping correctness. My contributions and work in progress are
 \begin{itemize}
-  \item Refactoring and implementing local matrices for Frontend and CHI IR of Taichi Language
-  \item Extending IR optimizations (e.g. \textbf{dead code elimination}) to support the new matrix operations
-  \item Enabling large matrices and optimizations (e.g. \textbf{SIMD}) for matrix operations
-  \item Conducting experiments on performance gains; implementing fallback strategies to avoid performance regression on backends that do not support SIMD
+    \item Implemented a case study for FlexASR pooling instructions in hex and verified its correctness against the software implementations.
+    \item Designing memory layout mapping invariant inference/generation algorithm.
+\end{itemize}
+\datedsubsection{\textbf{Improving Term Extraction with Acyclic Constraints}}{Sep. 2022 -- Feb. 2023}
+\textbf{TL;DR} To have a better term extraction algorithm for \texttt{egg}, an equality saturation framework, we devise the encoding using Weighted partial MaxSAT and include a set of \textit{Acyclic constraints} that ensures the acyclicity of the extracted term. Our encoding demonstrates better solver time ($\sim$3x speed up) for the case study of extracting tensor programs. I led the development of the case study and the encoding, and authored the workshop paper at \textbf{PLDI EGRAPHS'23}.
+% My contributions include
+% \begin{itemize}
+%     \item Devised the constraint
+%     \item Optimized the constraints with Tesitin encoding, which exponentially reduces the search space.
+%     \item Developed the application-agnostic term extractor
+%     \item Implemented the case study using Glenside examples
+%     \item Authored the workshop paper at \textbf{PLDI EGRAPHS'23}
+% \end{itemize}
+% Optimal term extraction in \texttt{egg}, an equality saturation framework over-approximates cycles in the egraph and can yield sub-optimal solutions. The alternative ILP encoding formulates the acyclicity by solving the topological order of the AST nodes, which takes too long to solve and is not practical. In this work, we devise the encoding using Weighted partial MaxSAT and include a set of \textit{Acyclic constraints} that ensures the acyclicity of the extracted optimal term.
+\datedsubsection{\textbf{Py}\textit{rope}: Towards Correct-by-construction Hardware Modeling}{Mar. 2022 -- June. 2022}
+\textbf{TL;DR} \textbf{Py}\textit{rope} is a Python-based framework for high-level hardware modeling. \textbf{Py}\textit{rope} enables expressing proofs and guarantees of modeled instruction in Python and transpiles hardware models into Dafny for verification.
+\textbf{I led the development of }\textbf{Py}\textit{rope}\textbf{ during my internship at Intel Labs.}
+
+\datedsubsection{\textbf{3LA: Application-level Validation of Accelerator Designs}}{June. 2021 -- June. 2022}
+\textbf{TL;DR} 3LA is a software/hardware co-verification methodology for DL accelerators that aids hardware developers in performing early-stage application-level debugging. My contributions are
+% 3LA is a software/hardware co-verification methodology for DL accelerators. 3LA takes DL applications from various frontends as inputs and uses \textit{flexible matching} to identify opportunities of invoking the accelerator in the DNN. 3LA methodology is evaluated on 3 open-source accelerator platforms: FlexASR, HLSCNN, and VTA.
+% The evaluation shows that by adopting 3LA, developers identified numerical issues with the custom numerics (AdptivFloat) of HLSCNN, which caused dramatic accuracy loss in some of the applications. My contributions are
+\begin{itemize}
+    \item Led the development of \textit{flexmatch} and extended Glenside to support a more diverse set of models.
+    \item Implemented the compilation pipeline for VTA using BYOC interfaces of TVM.
+    \item Implemented handwritten digit recognition (on CIFAR) and image classification (on ImageNet) for VTA. Passed the mapping validation using 3LA.
+    \item Co-authored a \textbf{ASPLOS LATTE'21} workshop paper.
+    \item Co-authored a paper under review at \textbf{ACM TODAES}.
+\end{itemize}
+\datedsubsection{\textbf{Dynamic Tensor Rematerialization}}{Jan. 2020 -- Oct. 2020}
+\textbf{TL;DR} Dynamic Tensor Materialization (DTR) is an online, heuristic-based checkpointing algorithm that enables DL inference under constrained memory budgets. My contributions are
+% Dynamic Tensor Materialization (DTR) is an online, heuristic-based checkpointing algorithm for ML inference when the intermediate activations cannot fit on the GPU memory. DTR evicts and re-computes the intermediate tensors when necessary. The evaluations on real-world DL applications show that DTR achieves near-optimal performance. My contributions are
+\begin{itemize} 
+    \item Identified problems in the PyTorch DTR implementation.
+    \item Designed the evaluation framework for DTR and extended the case studies to multiple new DL applications (e.g. Unrolled GAN, UNet).
+    \item Co-authored the paper published at \textbf{ICLR'21}.
+\end{itemize}
+
+\section{\faLeanpub\ Publications}
+\begin{itemize}
+    \item \bibentry{egraphs23} \href{https://only.rs/assets/papers/EGRAPHS2023.pdf}{[Paper]}
+    % \item \bibentry{latte21}
+    \item \textbf{[submitted to ACM TODAES]}\bibentry{pldi22} \href{https://vcanumalla.github.io/pubs/2023-todaes-3la.pdf}{[Pre-print]}
+    \item \bibentry{latte21} \href{https://vlsiarch.eecs.harvard.edu/publications/dsls-accelerator-rich-platform-implementations-addressing-mapping-gap}{[Paper]}
+    \item \bibentry{kirisame2021dynamic} \href{https://arxiv.org/abs/2006.09616}{[ArXiv]}
+\end{itemize}
+
+\section{\faHandGrabO\ Service}
+\begin{itemize}
+    \item AEC member of POPL'24, MLSys'23, MICRO'21
+    \item Mentor of the Ph.D. application mentoring program (Princeton, 2023)
+\end{itemize}
+
+\section{\faCode\ Internships}
+% \datedsubsection{\textbf{Taichi Graphics}, Remote}{June. 2022 -- Sep. 2022}
+% \role{Compiler R\&D Intern}{(Graphics/Compiler/\textbf{C++}/\textbf{Python})}
+% Focusing on IR optimizations for \myhref[https://www.taichi-lang.org/]{Taichi Language}, including:
+% \begin{itemize}
+%   \item Refactoring and implementing local matrices for Frontend and CHI IR of Taichi Language
+%   \item Extending IR optimizations (e.g. \textbf{dead code elimination}) to support the new matrix operations
+%   \item Enabling large matrices and optimizations (e.g. \textbf{SIMD}) for matrix operations
+%   \item Conducting experiments on performance gains; implementing fallback strategies to avoid performance regression on backends that do not support SIMD
+% \end{itemize}
+\datedsubsection{\textbf{Taichi Graphics}, Remote and Beijing, China}{June. 2022 -- Sep. 2022}
+\role{Compiler R\&D Intern}{(\textbf{C++}/\textbf{Python})}
+\begin{itemize}
+    \item Refactored the intermediate representation (IR) of Taichi Language
+    \item Implemented standalone \textbf{Tensor type} for better compilation speed
+    \item Adapted \textbf{compiler passes} (e.g. Load/Store forwarding, Dead code elimination, reaching definition, etc.) to optimize for tensor type expressions
+    \item Implemented \textbf{LLVM}-based code generation for tensor type for Superword-level vectorization
 \end{itemize}
 
 \datedsubsection{\textbf{Intel Labs}, Hillsboro, OR}{Mar. 2022 -- June. 2022}
 \role{Formal Verification Research Intern}{(Formal Methods/\textbf{Python}/\textbf{Dafny})}
 Developed the \textbf{Py}\textit{rope} framework for \textbf{correct-by-construction} hardware modeling.
 \begin{itemize}
-  \item Enabled \textbf{proof-driven development} purely in Python
-  \item Encoded the correctness proof of (multi-)montgomery reduction algorithm in Python and verified successfully by compiling to Dafny
-  \item Unified ``sources of truth'' for correctness proofs and hardware model implementations
+  \item Facilitated \textbf{correct-by-construction} hardware modeling purely in Python
+  \item Encoded the correctness proof of (multi-)montgomery reduction algorithm in Python and \textbf{verified successfully by compiling to Dafny}
+  \item Unified ``sources of truth'' for correctness proofs and programming model implementations
 \end{itemize}
 
-\datedsubsection{\textbf{Semiconductor Research Corporation}, Remote}{Sep. 2019 -- Mar. 2022}
-\role{Research Scholar}{(MLSys/Formal Methods/\textbf{Rust}/\textbf{Python}/\textbf{C++})}
-Participated research projects funded by SRC, including Dynamic Tensor Rematerialization (DTR) and 3LA and collaborated on papers submitted to ICLR'21 and LATTE'21 (a Workshop of ASPLOS). 
+\datedsubsection{\textbf{UWPLSE}, Seattle, WA}{Oct. 2019 -- Sep. 2021}
+\role{Research Assistant}{(PL/Compiler)}
+Responsible for conducting research with Prof. Zachary Tatlock, specifically,
 \begin{itemize}
-    \item Contributed to the evaluation infrastructure and submission artifact for DTR
-    \item Implemented flexible matching algorithm for 3LA, which applies equality saturation to explore accelerator offloading for Deep Neural Networks
-    \item Participated in the ADA Center Annual Fall Symposium
-    \item Presented flexible matching at the ADA Center liaison meeting
+    \item Implemented evaluations in the Dynamic Tensor Rematerialization project
+    \item Designed a flexible matching algorithm for domain-specific language compilers.
+    \item Led research projects with other undergraduate students
+    \item Attended and presented at reading groups
 \end{itemize}
 
-\section{\faLeanpub\ Publications}
+\section{\faBinoculars\ Selected Projects\ \& Contributions}
+\datedsubsection{\textsc{CatsTail}: Synthesizing Packet Programs via Equality Saturation}{(\textbf{Rust}) {\color{blue}{\href{https://github.com/AD1024/catstail}{\ul{GitHub}}}}}
+\datedsubsection{\textbf{Music Scores}: Reverse engineering of some arrangements}{(\textbf{Lilypond}) {\color{blue}{\href{https://github.com/AD1024/Music-Scores}{\ul{GitHub}}}}}
+\datedsubsection{\textbf{flexmatch}: Flexible offload pattern matching for DNNs}{{(\textbf{Python}, \textbf{Rust}) \color{blue}{\href{https://github.com/AD1024/flexmatch}{\ul{GitHub}}}}}
+\datedsubsection{\textbf{egg-taichi}: Towards automated super-optimization for Taichi programs}{(\textbf{Rust}) {\color{blue}{\href{https://github.com/AD1024/egg-taichi}{\ul{GitHub}}}}}
+\datedsubsection{\textbf{taichi$^\star$}: High-performance parallel computing in Python}{(\textbf{C++}, \textbf{Python}) {\color{blue}{\href{https://github.com/taichi-dev/taichi}{\ul{GitHub}}}}}
+\datedsubsection{\textbf{Glenside$^\star$}: Term rewriting for tensor programs}{(\textbf{Rust}) {\color{blue}{\href{https://github.com/gussmith23/glenside}{\ul{GitHub}}}}}
+\datedsubsection{\textbf{veripy}: auto-active verification for Python programs}{(\textbf{Python}) {\color{blue}{\href{https://github.com/AD1024/veripy}{\ul{GitHub}}}}}
+\datedsubsection{\textbf{dtlc}: Dependently-typed lambda calculus}{(\textbf{OCaml}) {\color{blue}{\href{https://github.com/AD1024/dtlc}{\ul{GitHub}}}}}
+\datedsubsection{\textbf{Sager}: A demonic graph synthesizer for worst-case performance}{(\textsc{Rosette}, \textbf{Racket}) {\color{blue}{\href{https://github.com/AD1024/Sager}{\ul{GitHub}}}}}
+\datedsubsection{\textbf{Ruxl$^\star$}: Applicatives, Monads and a ``\textit{Future}'' for Rust}{(\textbf{Rust}) {\color{blue}{\href{https://github.com/yihozhang/ruxl}{\ul{GitHub}}}}}
+\datedsubsection{\textbf{Lambda Calculus}: UTLC, STLC and System F in OCaml}{(\textbf{OCaml}) {\color{blue}{\href{https://github.com/AD1024/Advanced-PL/tree/master/hw5}{\ul{GitHub}}}}}
+\datedsubsection{\textbf{SimGE}: DTR for memory movement optimization}{(\textbf{Rust}) {\color{blue}{\href{https://github.com/AD1024/simge}{\ul{GitHub}}}}}
+\datedsubsection{\textbf{Multi-Paxos}: Implementation of Multi-Paxos in Java}{(\textbf{Java}) {\color{black}{CSE 452}}}
+\datedsubsection{\textbf{ETH Client}: Implementation of an ETH-like Blockchain}{(\textbf{Rust}) {\color{black}{COS 471}}}
+\datedsubsection{}{More on my {\color{purple}{\href{https://github.com/AD1024}{\ul{GitHub}}}}}
+\hfill$\star:$ Contributor
+
+\section{\faLightbulbO\ Teaching}
 \begin{itemize}
-    \item \bibentry{kirisame2021dynamic}
-    \item \bibentry{latte21}
-    \item \bibentry{pldi22}
+    \item {\color{blue}{\href{https://www.cs.princeton.edu/courses/archive/fall23/cos516/index.html}{\ul{COS 516: Automated Reasoning about Software}}}} (TA, Princeton University)
+    \item {\color{blue}\href{https://sites.google.com/cs.washington.edu/cse-505-spring-2021}{\ul{CSE 505: Principles of Programming Languages}}} (TA, University of Washington)
 \end{itemize}
 
 \section{\faCog\ Skills}
@@ -70,34 +160,20 @@ Participated research projects funded by SRC, including Dynamic Tensor Remateria
     \item \textbf{Compiler \& Applied PL:} Equality Saturation, Static Analysis, Computer-aided Reasoning, SMT
     \item \textbf{PL Theory:} Formal Verification, Type Theory, Mathematical Logic
     \item \textbf{Systems:} Distributed Systems, Machine Learning Systems, Data Center Systems
-    \item \textbf{Others:} Computer Graphics, Design and Implementation of Algorithms and Data Structures
-\end{itemize}
+    \item \textbf{Others:} Algorithms and Data Structures
+    \item \textbf{Fun Fact:} I am more seasoned in playing the violin than coding \faMusic; I have:
+    \begin{enumerate}
+        \item a Lv.9 certificate$\ssymbol{1}$ (similar to \href{https://www.abrsm.org/en-us/performance-grades/about-performance-grades}{{\color{blue}\ul{ABRSM}}} Grade 8) issued by \href{https://en.wikipedia.org/wiki/Central_Conservatory_of_Music}{{\color{blue} \ul{Central Conservative of Music}}};
+        \item $>$ \textbf{20-year} violin solo experience;
+        \item Multiple 1st Prizes (various local competitions in Beijing) and a Silver medal (Beijing regional)$\ssymbol{2}$;
+        \item 6-year experience with symphony orchestras; 3-year experience as \textit{the 2nd Principal Violinist};
+        \item 3-year experience with a piano quartet/quintet and multiple string quartets (with 1 CD made);
+        \item $\sim4$ public concerts with a philharmonic orchestra$^\star$ at the \href{https://en.wikipedia.org/wiki/National_Centre_for_the_Performing_Arts_(China)}{\color{blue}{\ul{National Centre for the Performing Arts}}}, Beijing, China.
+    \end{enumerate}
+    \hfill $\ssymbol{1}:$ \textit{The highest level for non-professionals}
 
-\section{\faGithub\ Related Projects \& Open-source Contributions}
-\begin{itemize}
-    \item \myhref[https://github.com/taichi-dev/taichi]{Taichi}: contributed to matrix representations refactor and optimizations.\hfill \textbf{C++}, \textbf{Python}, \textsc{LLVM}
-    \item \myhref[https://github.com/AD1024/veripy]{veripy}: an experimental auto-active verification framework for Python.\hfill \textbf{Python}, \textsc{Z3}
-    \item \myhref[https://github.com/AD1024/dtlc]{dtlc}: an implementation of dependently-typed lambda calculus with MLTT.\hfill \textbf{OCaml}, \textsc{Menhir}
-    \item \myhref[https://github.com/AD1024/flexmatch]{FlexMatch}: implemented flexible offloading for deep learning accelerators.\hfill \textbf{Rust}, \textbf{Python}, \textsc{TVM}
-    \item \myhref[https://github.com/gussmith23/glenside]{Glenside}: contributed to unifying Glenside and TVM Relay programs.\hfill \textbf{Rust}, \textsc{TVM}
-    \item \myhref[https://github.com/AD1024/Sager]{Sager}: a demonic graph structure synthesizer for wrost-case algorithm analysis. \hfill \textbf{Racket}, \textsc{Rosette}
-\end{itemize}
+    \hfill$\ssymbol{2}:$ \textit{Awarded during middle and high school years.}
 
-\section{\faSlideshare\ Talks \& Presentations}
-\begin{itemize}
-    \item \myhref[https://homes.cs.washington.edu/~dh63/assets/talks/Pyrope_slides.pptx]{Towards correct-by-construction hardware modeling in Python/HeteroCL} at Intel (June. 2022)
-    \item \myhref[https://docs.google.com/presentation/d/13YihSVXt-t_Lu7ddCy7zxNiqM6zA-Z1Q/edit]{Correct \& Flexible Compiler Support for Custom Accelerators} at SRC ADA Center (Sep. 2021)
-    \item From DSLs to Accelerator-rich Platform Implementations: Addressing the mapping gap \\at Intel (Sep. 2021, jointly presented with Dr. Steven Lybomirsky)
-\end{itemize}
-
-\section{\faMortarBoard\ Teaching}
-\datedsubsection{\textbf{University of Washington}, Seattle, WA}{}
-\begin{itemize}
-    \item Principle of Programming Languages (CSE 505)
-\end{itemize}
-
-\section{\faUsers\ Academic Service}
-\begin{itemize}
-    \item Artifact Evaluation, MICRO'21
+    \hfill$\star:$ \textit{The Beijing National Day School Philharmonic Orchestra}
 \end{itemize}
 \end{document}
